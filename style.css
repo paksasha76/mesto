@@ -16,3 +16,7 @@
         color: #ffffff;
         background-color: white;
 }
+
+.profile__avatar {
+    border-radius: 50%;
+}
