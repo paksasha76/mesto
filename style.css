@@ -33,4 +33,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    gap: 17px;
+}
+
+.header {
+  border-bottom: 1px solid #545454;
+  margin-bottom: 36px;
+}
+
+.header__logo {
+    margin-bottom: 41px;
+    margin-top: 45px;
 }
