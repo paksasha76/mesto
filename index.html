@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+ <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,27 +13,83 @@
   <body class="root">
     <div class="page">
       <header class="header">
-          <img src="" alt="" class="header__logo">
-          <hr class="header__line">
+          <img src="./images/logo.svg" alt="Логотип" class="header__logo">
        <header>
            <main>
         <section class="profile">
             <img src="" alt="" class="profile__avatar">
-            <div class="profile__info"></div>
+            <div class="profile__info">
+                <div class="profile__block">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button class="profile__redactive" class="button"></button>
+                </div>
+                <p class="profile__about-me">Исследователь океана</p>
+                <button class="profile__add-btn active" type="button">
+                    <img src="./images/Add Button.png" alt="Кнопка добавить" class="profile__btn-img">
+                </button>
+            </div>
         </section>
-        <section class="elements">
-            
+        <section class="cards">
+            <div class="card">
+                <img src="" alt="">
+                <div class="card__block">
+                    <h2 class="card__title"></h2>
+                    <button type="button" class="card__btn-like"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div class="card__block">
+                    <h2 class="card__title"></h2>
+                    <button type="button" class="card__btn-like"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div class="card__block">
+                    <h2 class="card__title"></h2>
+                    <button type="button" class="card__btn-like"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div class="card__block">
+                    <h2 class="card__title"></h2>
+                    <button type="button" class="card__btn-like"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div class="card__block">
+                    <h2 class="card__title"></h2>
+                    <button type="button" class="card__btn-like"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div class="card__block">
+                    <h2 class="card__title"></h2>
+                    <button type="button" class="card__btn-like"></button>
+                </div>
+            </div>
         </section>
         </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
     <div class="popup">
-        <div class="popup__container"></div>
-        <div class="popup__close"></div>
-        <div class="popup__title"></div>
+        <div class="popup__container">
+        <div class="popup__close-btn active" type="button"></div>
+        <h2 class="popup__title"></h2>
         <div class="popup__text"></div>
     </div>
+    <form class="profile__form" name="profile-info">
+        <input type="text" class="popup__input popup__input_person_name" name="name" placeholder="Имя">
+        <input type="submit" class="popup__input popup__input_person_about-me" name="about-me" placeholder="О себе">
+        <button class="popup__save-btn" type="submit">Сохранить</button>
+    </form>
      </div>
-  </body>
+     </div>
+     <script src="./scripts/index.js"></script>
+ </body>
 </html>
