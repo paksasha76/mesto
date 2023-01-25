@@ -45,3 +45,57 @@
     margin-bottom: 41px;
     margin-top: 45px;
 }
+
+.card__title {
+    background-color: #ffffff;
+    font-size: 24px;
+    font-style: normal;
+    color: black;
+    font-weight: 900;
+    line-height: 29px;
+    padding-top: 25px;
+    padding-bottom: 32px;
+    max-width: 282px;
+    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+    
+}
+
+.card__btn-like {
+    background-image: url(./images/like.svg);
+    height: 19px;
+    width: 22px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    bottom: 100px;
+    
+}
+
+.footer__copyright {
+    color: #545454;
+}
+
+.profile__edit-btn {
+  background-color: url(images/edit.svg);
+  border: 1px solid #fff;
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 282px;
+    height: 361px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
