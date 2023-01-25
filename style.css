@@ -120,3 +120,16 @@ border: none;
 .profile {
     padding: 0 200px;
 }
+
+.profile__block {
+ 
+}
+
+.profile__name {
+
+}
+
+.profile__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
