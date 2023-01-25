@@ -101,3 +101,8 @@
 .popup {
     visibility: hidden;
 }
+
+.profile__add-btn{
+background: transparent;
+border: none;
+}
