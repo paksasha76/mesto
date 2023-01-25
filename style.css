@@ -10,7 +10,6 @@
     -moz-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
     margin: 0 auto;
-    padding: 0 200px;
 }
 
 .root {
@@ -39,6 +38,7 @@
 .header {
   border-bottom: 1px solid #545454;
   margin-bottom: 36px;
+  padding: 0 200px;
 }
 
 .header__logo {
@@ -107,4 +107,16 @@ border: none;
 
 .card__block {
     background-color: #fff;
+}
+
+.cards {
+    padding: 0 200px;
+}
+
+.footer {
+    padding: 0 200px;
+}
+
+.profile {
+    padding: 0 200px;
 }
