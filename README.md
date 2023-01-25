@@ -10,4 +10,4 @@
   * ![Flutter](https://img.shields.io/badge/-Grid-457)
   * ![Flutter](https://img.shields.io/badge/-JavaScript-326)
 
-* Ссылка на проект 
+* Ссылка на проект https://paksasha76.github.io/mesto/ 
