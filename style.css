@@ -96,6 +96,8 @@
     height: 361px;
     border-radius: 10px;
     overflow: hidden;
-    position: relative;
-    z-index: 2;
+}
+
+.popup {
+    visibility: hidden;
 }
