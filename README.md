@@ -1,17 +1,13 @@
-# Проект: Место
+# Проект: Путешествие по России
 
-### Обзор
+* Проектная работа mesto, которая представляет собой интерактивную страницу куда можно добавлять и удалять фотографии
 
-* Figma
-* Картинки
+* При разработке данного проекта использованы следующие технологии:
 
-**Figma**
+  * ![Flutter](https://img.shields.io/badge/-HTML-09090)
+  * ![Flutter](https://img.shields.io/badge/-CSS-102348)
+  * ![Flutter](https://img.shields.io/badge/-Flexbox-108)
+  * ![Flutter](https://img.shields.io/badge/-Grid-457)
+  * ![Flutter](https://img.shields.io/badge/-JavaScript-326)
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
-
-**Картинки**
-
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
-
-Удачи!
+* Ссылка на проект 
