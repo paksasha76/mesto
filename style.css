@@ -14,7 +14,7 @@
 
 .root {
   color: #ffffff;
-  background-color: #000000;
+  background-color: white;
 }
 
 .profile__avatar {
@@ -33,12 +33,32 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 17px;
+  padding: 0 19px;
+}
+
+@media screen and (max-width: 768px) {
+    .cards {
+        padding: 0 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .header {
   border-bottom: 1px solid #545454;
   margin-bottom: 36px;
   padding: 0 200px;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 0 27px;
+    }
 }
 
 .header__logo {
@@ -111,12 +131,15 @@
   justify-content: space-between;
 }
 
-.cards {
-  padding: 0 200px;
-}
 
 .footer {
   padding: 0 200px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 0 19px;
+    }
 }
 
 .profile {
@@ -124,6 +147,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 47px;
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        padding: 0 19px;
+    }
 }
 
 
