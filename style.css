@@ -14,7 +14,7 @@
 
 .root {
   color: #ffffff;
-  background-color: white;
+  background-color: #000000;
 }
 
 .profile__avatar {
@@ -103,6 +103,7 @@
 .profile__add-btn {
   background: transparent;
   border: none;
+  margin-left: 50px;
 }
 
 .card__block {
@@ -119,12 +120,18 @@
 
 .profile {
   padding: 0 200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .profile__block {
+    position: relative;
+    right: 230px;
+    bottom: 30px;
 }
 
 .profile__name {
+    min-width: 294px;
 }
 
 .profile__info {
