@@ -129,7 +129,7 @@
   background: transparent;
   border: none;
   margin-left: 50px;
-  
+  cursor: pointer;
 }
 
 .card__block {
