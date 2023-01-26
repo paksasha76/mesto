@@ -80,6 +80,7 @@
   height: 30px;
   background: transparent;
   cursor: pointer;
+  margin-top: 39px;
 }
 
 .card {
@@ -119,12 +120,12 @@
   padding: 0 200px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 47px;
 }
 
 .profile__block {
-    position: relative;
-    right: 230px;
-    bottom: 30px;
+    
+    
 }
 
 .profile__name {
@@ -137,7 +138,7 @@
 
 .profile__info {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 
