@@ -14,7 +14,7 @@
 
 .root {
   color: #ffffff;
-  background-color: white;
+  background-color: #000000;
 }
 
 .profile__avatar {
@@ -33,7 +33,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 17px;
-  padding: 0 19px;
+  padding: 0 200px;
 }
 
 @media screen and (max-width: 768px) {
@@ -177,7 +177,7 @@
     line-height: 22px;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
     .card {
         margin: 0 auto;
     }
