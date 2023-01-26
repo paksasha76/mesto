@@ -56,8 +56,8 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin-left: 24px;
-  margin-bottom: 31px;
+  margin-left: 20px;
+ 
 }
 
 .card__btn-like {
@@ -65,10 +65,9 @@
   width: 30px;
   cursor: pointer;
   border: none;
-  position: relative;
-  bottom: 56px;
-  left: 230px;
+  margin-top: 20px;
   background: transparent;
+  margin-right: 15px;
 }
 
 .footer__copyright {
@@ -108,6 +107,8 @@
 
 .card__block {
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
 
 .cards {
@@ -132,6 +133,10 @@
 
 .profile__name {
     min-width: 294px;
+    font-weight: 500;
+    font-size: 42px;
+    font-style: normal;
+    line-height: 48px;
 }
 
 .profile__info {
