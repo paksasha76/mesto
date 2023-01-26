@@ -75,14 +75,10 @@
 }
 
 .profile__edit-btn {
-  background-color: url(./images/edit.svg);
-  border: 1px solid #fff;
-  background-size: 10px 10px;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background: transparent;
   cursor: pointer;
 }
 
