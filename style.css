@@ -81,6 +81,8 @@
   background: transparent;
   cursor: pointer;
   margin-top: 39px;
+  position: relative;
+  right: 96px;
 }
 
 .card {
@@ -100,6 +102,7 @@
   background: transparent;
   border: none;
   margin-left: 50px;
+  
 }
 
 .card__block {
@@ -139,6 +142,7 @@
 .profile__info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 100px;
 }
 
 
