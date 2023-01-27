@@ -215,3 +215,7 @@
         bottom: 10px;
     }
 }
+
+.popup_opened {
+    visibility: visible;
+}
