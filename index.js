@@ -6,3 +6,11 @@ let profileJob = document.querySelector(".profile__about-me");
 let formCard = document.querySelector(".popup__form");
 let nameInput = formElement.querySelector(".popup__input_person_name");
 let jobInput = formElement.querySelector(".popup__input_person_about-me");
+
+function openPopup () {
+    popup.classList.add("popup_opened");
+}
+
+function closePopup () {
+    popup.classList.remove("popup_opened");
+}
