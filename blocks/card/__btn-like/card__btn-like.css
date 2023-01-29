@@ -7,3 +7,7 @@
   background: transparent;
   margin-right: 15px;
 }
+
+.card__btn-like:hover {
+  opacity: 0.8;
+}
