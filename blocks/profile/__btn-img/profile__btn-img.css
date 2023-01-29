@@ -4,7 +4,7 @@
   object-fit: fill;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .profile__btn-img {
     width: 282px;
   }
