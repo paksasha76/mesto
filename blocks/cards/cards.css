@@ -1,0 +1,15 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 17px;
+  padding: 0 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    padding: 0 19px;
+    display: flex;
+    flex-direction: column;
+  }
+}

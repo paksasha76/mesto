@@ -1,0 +1,9 @@
+.card__btn-like {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  border: none;
+  margin-top: 20px;
+  background: transparent;
+  margin-right: 15px;
+}
