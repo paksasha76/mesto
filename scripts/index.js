@@ -17,8 +17,8 @@ function closePopup() {
     popup.classList.remove("popup_opened");
 }
 
-function handleFormSubmit(evt) {
-    evt.preventDefault();
+function handleFormSubmit(event) {
+    event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     closePopup();
