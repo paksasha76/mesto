@@ -7,7 +7,7 @@ let jobInput = document.querySelector(".popup__input_job");
 let profileName = document.querySelector(".profile__name");
 let profileJob = document.querySelector(".profile__job");
 
-function openedPopup() {
+function openPopup() {
     popup.classList.add("popup_opened");
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
@@ -24,6 +24,6 @@ function handleFormSubmit(evt) {
     closePopup();
 }
 
-buttonEdit.addEventListener("click", openedPopup);
+buttonEdit.addEventListener("click", openPopup);
 buttonClose.addEventListener("click", closePopup);
 popupForm.addEventListener("submit", handleFormSubmit);
