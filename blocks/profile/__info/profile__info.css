@@ -4,3 +4,9 @@
   gap: 100px;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .profile__info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

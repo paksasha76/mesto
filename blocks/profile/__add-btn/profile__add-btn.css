@@ -4,3 +4,10 @@
   margin-left: 50px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .profile__add-btn {
+    margin: 0;
+    margin-right: 30px;
+  }
+}
