@@ -9,4 +9,5 @@
   align-items: center;
   visibility: hidden;
   display: grid;
+  box-sizing: border-box;
 }
