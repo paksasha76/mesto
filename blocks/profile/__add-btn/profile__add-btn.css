@@ -11,9 +11,8 @@
 @media screen and (max-width: 650px) {
   .profile__add-btn {
     margin: 0;
+   
     
-    position: relative;
-    bottom: 60px;
   }
 }
 
