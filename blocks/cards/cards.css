@@ -5,6 +5,7 @@
   gap: 17px;
   padding: 0 200px;
   margin-bottom: 70px;
+  justify-content: center;
 }
 
 @media screen and (max-width: 650px) {
@@ -12,14 +13,13 @@
     padding: 0 19px;
     display: flex;
     flex-direction: column;
-    max-width: 320px;
   }
 }
 
-@media screen and (min-width: 651px) and (max-width: 900px) {
+@media screen and (min-width: 651px) and (max-width: 1000px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    padding: 0 30px;
+    justify-content: flex-start;
   }
 }
