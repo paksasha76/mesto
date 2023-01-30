@@ -1,6 +1,4 @@
 .profile__edit-btn {
-  position: relative;
-  right: 96px;
   border: none;
   width: 30px;
   height: 30px;
@@ -15,6 +13,6 @@
 
 @media screen and (max-width: 650px) {
   .profile__edit-btn {
-   right: 160px;
+   
   }
 }
