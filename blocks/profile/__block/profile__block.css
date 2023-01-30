@@ -1,11 +1,10 @@
 .profile__block {
-    max-width: 320px;
+        display: flex;
 }
 
 @media screen and (max-width: 650px) {
     .profile__block {
         max-width: 280px;
         margin: 0 auto;
-       
     }
 }
