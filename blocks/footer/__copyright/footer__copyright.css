@@ -3,7 +3,7 @@
   font-size: 18px;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
   .footer__copyright {
     font-size: 14px;
   }

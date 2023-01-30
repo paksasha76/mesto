@@ -7,11 +7,19 @@
   margin-bottom: 70px;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
   .cards {
     padding: 0 19px;
     display: flex;
     flex-direction: column;
     max-width: 320px;
+  }
+}
+
+@media screen and (min-width: 651px) and (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 0 30px;
   }
 }

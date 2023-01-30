@@ -12,7 +12,7 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-@media screen and (max-width: 653px) {
+@media screen and (max-width: 650px) {
   .popup__save-btn {
     margin: 18px 22px 25px;
     width: 238px;
