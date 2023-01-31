@@ -1,10 +1,10 @@
 .profile__edit-btn {
-  border: none;
   width: 30px;
   height: 30px;
+  border: none;
   background: transparent;
-  cursor: pointer;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 .profile__edit-btn:hover {

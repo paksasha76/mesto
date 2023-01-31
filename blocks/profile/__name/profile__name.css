@@ -13,5 +13,6 @@
   .profile__name {
     font-size: 27px;
     min-width: 189px;
+    margin-top: 10px;
   }
 }
