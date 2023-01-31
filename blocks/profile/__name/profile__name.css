@@ -14,8 +14,8 @@
     font-size: 27px;
     min-width: 189px;
     margin-top: 10px;
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
     overflow: hidden;
   }
 }
