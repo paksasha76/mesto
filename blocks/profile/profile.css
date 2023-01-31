@@ -20,5 +20,6 @@
     display: flex;
     padding: 0 50px;
     flex-direction: column;
+    margin-bottom: 50px;
   }
 }
