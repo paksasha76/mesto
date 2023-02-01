@@ -2,6 +2,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  margin: auto;
 }
 
 .profile__add-btn:hover {
