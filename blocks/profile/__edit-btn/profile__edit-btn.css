@@ -9,10 +9,12 @@
   border: 1px solid #ffffff;
   background-color: rgba(28, 28, 28, 0);
   cursor: pointer;
+  background-size: 10px;
+  background-position: center;
 }
 
 .profile__edit-btn:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 650px) {
@@ -20,5 +22,6 @@
     width: 18px;
     height: 18px;
     margin-top: 26px;
+    background-size: 7px;
   }
 }

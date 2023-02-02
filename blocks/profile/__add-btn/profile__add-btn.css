@@ -5,8 +5,12 @@
   margin: auto;
   width: 150px;
   height: 50px;
-  background-image: url(../../../images/add.png);
+  background-image: url(../../../images/add1.svg);
+  border: 1px solid #ffffff;
+  background-size: 22px;
+  background-repeat: no-repeat;
   border-radius: 2px;
+  background-position: center;
 }
 
 .profile__add-btn:hover {
@@ -22,6 +26,6 @@
 @media screen and (max-width: 650px) {
   .profile__add-btn {
     width: 282px;
-    background-image: url(../../../images/mobile.svg);
+    background-size: 16px;
   }
 }
