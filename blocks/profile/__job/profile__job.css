@@ -21,8 +21,6 @@
   .profile__job {
     font-size: 14px;
     max-width: 282px;
-    position: relative;
-    bottom: 10px;
-    right: 18px;
+    line-height: 17px;
   }
 }
