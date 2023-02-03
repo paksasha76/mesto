@@ -22,6 +22,7 @@
     padding: 0 19px;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin: 40px 0 50px 0;
+    gap: 20px;
   }
 }
