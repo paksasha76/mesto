@@ -16,7 +16,8 @@ let popupEdit = document.querySelector(".popup__edit");
 let buttonClose = document.querySelector(".popup__close-btn");
 let buttonCloseAdd = document.querySelector(".popup__close_add-btn");
 
-let buttonDelete = document.querySelector(".card__delete-btn");
+let buttonDelete = document.querySelector(".card__btn-delete");
+let card = document.querySelector(".card");
 
 const initialCards = [
     {
@@ -62,7 +63,7 @@ function closePopup() {
 }
 
 function deleteCard() {
-    popupEdit.classList.remove("popup_opened");
+    card.remove();
 }
 
 function closePopupAdd() {
@@ -85,3 +86,5 @@ buttonCloseAdd.addEventListener("click", closePopupAdd);
 
 popupForm.addEventListener("submit", handleFormSubmit);
 popupFormAdd.addEventListener("submit", handleFormSubmit);
+
+buttonDelete.addEventListener("click", deleteCard);
