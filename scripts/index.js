@@ -1,6 +1,5 @@
 let popup = document.querySelector(".popup");
 let buttonEdit = document.querySelector(".profile__edit-btn");
-let buttonClose = document.querySelector(".popup__close-btn");
 let popupForm = document.querySelector(".popup__form");
 let nameInput = document.querySelector(".popup__input_type_name");
 let jobInput = document.querySelector(".popup__input_type_job");
@@ -14,6 +13,7 @@ let nameInputCard = document.querySelector(".popup__input_type_card-name");
 let linkInputCard = document.querySelector(".popup__input_type_card-link");
 let popupEdit = document.querySelector(".popup__edit");
 
+let buttonClose = document.querySelector(".popup__close-btn");
 let buttonCloseAdd = document.querySelector(".popup__close_add-btn");
 
 const initialCards = [
@@ -72,7 +72,9 @@ function handleFormSubmit(event) {
 
 buttonEdit.addEventListener("click", openPopup);
 buttonAdd.addEventListener("click", openPopupAdd);
+
 buttonClose.addEventListener("click", closePopup);
 buttonCloseAdd.addEventListener("click", closePopupAdd);
+
 popupForm.addEventListener("submit", handleFormSubmit);
 popupFormAdd.addEventListener("submit", handleFormSubmit);
