@@ -14,6 +14,8 @@ let nameInputCard = document.querySelector(".popup__input_type_card-name");
 let linkInputCard = document.querySelector(".popup__input_type_card-link");
 let popupEdit = document.querySelector(".popup__edit");
 
+let buttonCloseAdd = document.querySelector(".popup__close_add-btn");
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -54,19 +56,23 @@ function openPopup() {
 }
 
 function closePopup() {
-    popup.classList.remove("popup_opened");
+    popupEdit.classList.remove("popup_opened");
 }
 
+function closePopupAdd() {
+    popupAdd.classList.remove("popup_opened");
+}
 
 function handleFormSubmit(event) {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    closePopup();
+    closePopupAdd();
 }
 
 buttonEdit.addEventListener("click", openPopup);
+buttonAdd.addEventListener("click", openPopupAdd);
 buttonClose.addEventListener("click", closePopup);
+buttonCloseAdd.addEventListener("click", closePopupAdd);
 popupForm.addEventListener("submit", handleFormSubmit);
 popupFormAdd.addEventListener("submit", handleFormSubmit);
-buttonAdd.addEventListener("click", openPopupAdd);
