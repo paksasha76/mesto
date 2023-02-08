@@ -16,6 +16,8 @@ let popupEdit = document.querySelector(".popup__edit");
 let buttonClose = document.querySelector(".popup__close-btn");
 let buttonCloseAdd = document.querySelector(".popup__close_add-btn");
 
+let buttonDelete = document.querySelector(".card__delete-btn");
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -59,6 +61,10 @@ function closePopup() {
     popupEdit.classList.remove("popup_opened");
 }
 
+function deleteCard() {
+    popupEdit.classList.remove("popup_opened");
+}
+
 function closePopupAdd() {
     popupAdd.classList.remove("popup_opened");
 }
@@ -67,6 +73,7 @@ function handleFormSubmit(event) {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
+    closePopup();
     closePopupAdd();
 }
 
