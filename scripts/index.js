@@ -16,8 +16,9 @@ let popupEdit = document.querySelector(".popup__edit");
 let buttonClose = document.querySelector(".popup__close-btn");
 let buttonCloseAdd = document.querySelector(".popup__close_add-btn");
 
-let buttonDelete = document.querySelector(".card__btn-delete");
+let buttonDelete = Array.from(document.querySelectorAll(".card__btn-delete"));
 let card = document.querySelector(".card");
+let cardLike = Array.from(document.querySelectorAll(".card__btn-like"));
 
 const initialCards = [
     {
@@ -62,9 +63,6 @@ function closePopup() {
     popupEdit.classList.remove("popup_opened");
 }
 
-function deleteCard() {
-    card.remove();
-}
 
 function closePopupAdd() {
     popupAdd.classList.remove("popup_opened");
@@ -87,4 +85,20 @@ buttonCloseAdd.addEventListener("click", closePopupAdd);
 popupForm.addEventListener("submit", handleFormSubmit);
 popupFormAdd.addEventListener("submit", handleFormSubmit);
 
-buttonDelete.addEventListener("click", deleteCard);
+
+
+cardLike.forEach(like => {
+    like.addEventListener('click', function () {
+        const listItem = like.closest('.card__btn-like');
+        listItem.classList.add('card__btn_like-active');
+      }); 
+})
+
+
+buttonDelete.forEach(card => {
+    card.addEventListener('click', function () {
+        const listItem = card.closest('.card');
+        listItem.remove();
+      }); 
+})
+
