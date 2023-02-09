@@ -12,3 +12,7 @@
   bottom: 350px;
   left: 250px;
 }
+
+.card__btn-delete:hover {
+  opacity: 0.6;
+}
