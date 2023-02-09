@@ -20,6 +20,10 @@ let buttonDelete = Array.from(document.querySelectorAll(".card__btn-delete"));
 let card = document.querySelector(".card");
 let cardLike = Array.from(document.querySelectorAll(".card__btn-like"));
 
+let popupZoom = document.querySelector(".popup-zoom");
+let popupImage = document.querySelector(".popup-zoom__image");
+let popupZoomText = document.querySelector(".popup-zoom__text");
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -59,6 +63,11 @@ function openPopup() {
     jobInput.value = profileJob.textContent;
 }
 
+function openPopupZoom() {
+  
+  popupZoom.classList.add("popup_opened");
+}
+
 function closePopup() {
     popupEdit.classList.remove("popup_opened");
 }
@@ -86,7 +95,6 @@ popupForm.addEventListener("submit", handleFormSubmit);
 popupFormAdd.addEventListener("submit", handleFormSubmit);
 
 
-
 cardLike.forEach(like => {
     like.addEventListener('click', function () {
         const listItem = like.closest('.card__btn-like');
@@ -102,3 +110,11 @@ buttonDelete.forEach(card => {
       }); 
 })
 
+/* function zoomPhoto(element) {
+  popupImage.src = element.link;
+  popupZoomText.textContent = element.name;
+  openPopupZoom();
+}
+
+card.addEventListener('click', zoomPhoto);
+*/
