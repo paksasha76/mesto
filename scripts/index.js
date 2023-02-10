@@ -24,6 +24,7 @@ let popupZoom = document.querySelector(".popup-zoom");
 let popupImage = document.querySelector(".popup-zoom__image");
 let popupZoomText = document.querySelector(".popup-zoom__text");
 let cardImage = document.querySelector(".card__img");
+let buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
 
 const initialCards = [
     {
@@ -78,6 +79,10 @@ function closePopupAdd() {
     popupAdd.classList.remove("popup_opened");
 }
 
+function closePopupZoom() {
+  popupZoom.classList.remove("popup_opened");
+}
+
 function handleFormSubmit(event) {
     event.preventDefault();
     profileName.textContent = nameInput.value;
@@ -91,6 +96,7 @@ buttonAdd.addEventListener("click", openPopupAdd);
 
 buttonClose.addEventListener("click", closePopup);
 buttonCloseAdd.addEventListener("click", closePopupAdd);
+buttonCloseZoom.addEventListener("click", closePopupZoom);
 
 popupForm.addEventListener("submit", handleFormSubmit);
 popupFormAdd.addEventListener("submit", handleFormSubmit);
