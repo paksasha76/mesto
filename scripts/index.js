@@ -1,31 +1,31 @@
-let popup = document.querySelector(".popup");
-let buttonEdit = document.querySelector(".profile__edit-btn");
-let popupForm = document.querySelector(".popup__form");
-let nameInput = document.querySelector(".popup__input_type_name");
-let jobInput = document.querySelector(".popup__input_type_job");
-let profileName = document.querySelector(".profile__name");
-let profileJob = document.querySelector(".profile__job");
+const popup = document.querySelector(".popup");
+const buttonEdit = document.querySelector(".profile__edit-btn");
+const popupForm = document.querySelector(".popup__form");
+const nameInput = document.querySelector(".popup__input_type_name");
+const jobInput = document.querySelector(".popup__input_type_job");
+const profileName = document.querySelector(".profile__name");
+const profileJob = document.querySelector(".profile__job");
 
-let buttonAdd = document.querySelector(".profile__add-btn");
-let popupAdd = document.querySelector(".popup__add");
-let popupFormAdd =  document.querySelector(".popup__form-add");
-let nameInputCard = document.querySelector(".popup__input_type_card-name");
-let linkInputCard = document.querySelector(".popup__input_type_card-link");
-let popupEdit = document.querySelector(".popup__edit");
+const buttonAdd = document.querySelector(".profile__add-btn");
+const popupAdd = document.querySelector(".popup__add");
+const popupFormAdd =  document.querySelector(".popup__form-add");
+const nameInputCard = document.querySelector(".popup__input_type_card-name");
+const linkInputCard = document.querySelector(".popup__input_type_card-link");
+const popupEdit = document.querySelector(".popup__edit");
 
-let buttonClose = document.querySelector(".popup__close-btn");
-let buttonCloseAdd = document.querySelector(".popup__close_add-btn");
+const buttonClose = document.querySelector(".popup__close-btn");
+const buttonCloseAdd = document.querySelector(".popup__close_add-btn");
 
-let buttonDelete = Array.from(document.querySelectorAll(".card__btn-delete"));
-let card = document.querySelector(".card");
-let cardLike = Array.from(document.querySelectorAll(".card__btn-like"));
+const buttonDelete = Array.from(document.querySelectorAll(".card__btn-delete"));
+const card = document.querySelector(".card");
+const cardLike = Array.from(document.querySelectorAll(".card__btn-like"));
 
-let popupZoom = document.querySelector(".popup-zoom");
-let popupImage = document.querySelector(".popup-zoom__image");
-let popupZoomText = document.querySelector(".popup-zoom__text");
-let cardImage = document.querySelector(".card__img");
-let buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
-let cardTitle = document.querySelector(".card__title");
+const popupZoom = document.querySelector(".popup-zoom");
+const popupImage = document.querySelector(".popup-zoom__image");
+const popupZoomText = document.querySelector(".popup-zoom__text");
+const cardImage = document.querySelector(".card__img");
+const buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
+const cardTitle = document.querySelector(".card__title");
 
 const initialCards = [
     {
