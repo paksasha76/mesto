@@ -54,8 +54,6 @@ const initialCards = [
     }
   ];
 
-let link = `${initialCards.name}`
-
 function openPopupAdd() {
     popupAdd.classList.add("popup_opened");
     nameInputCard.value = '';
@@ -94,17 +92,6 @@ function handleFormSubmit(event) {
     closePopupAdd();
 }
 
-buttonEdit.addEventListener("click", openPopup);
-buttonAdd.addEventListener("click", openPopupAdd);
-
-buttonClose.addEventListener("click", closePopup);
-buttonCloseAdd.addEventListener("click", closePopupAdd);
-buttonCloseZoom.addEventListener("click", closePopupZoom);
-
-popupForm.addEventListener("submit", handleFormSubmit);
-popupFormAdd.addEventListener("submit", handleFormSubmit);
-
-
 cardLike.forEach(like => {
     like.addEventListener('click', function () {
         const listItem = like.closest('.card__btn-like');
@@ -121,14 +108,19 @@ buttonDelete.forEach(card => {
 })
 
 
-
 cardImage.addEventListener("click", (event) => {
   openPopupZoom(popupZoom);
   popupImage.src = event.target.src;
   popupZoomText.textContent = cardTitle.textContent;
 });
 
+buttonEdit.addEventListener("click", openPopup);
+buttonAdd.addEventListener("click", openPopupAdd);
 
+buttonClose.addEventListener("click", closePopup);
+buttonCloseAdd.addEventListener("click", closePopupAdd);
+buttonCloseZoom.addEventListener("click", closePopupZoom);
 
-
+popupForm.addEventListener("submit", handleFormSubmit);
+popupFormAdd.addEventListener("submit", handleFormSubmit);
 
