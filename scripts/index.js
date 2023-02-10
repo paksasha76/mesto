@@ -25,6 +25,7 @@ let popupImage = document.querySelector(".popup-zoom__image");
 let popupZoomText = document.querySelector(".popup-zoom__text");
 let cardImage = document.querySelector(".card__img");
 let buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
+let cardTitle = document.querySelector(".card__title");
 
 const initialCards = [
     {
@@ -52,6 +53,8 @@ const initialCards = [
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
   ];
+
+let link = `${initialCards.name}`
 
 function openPopupAdd() {
     popupAdd.classList.add("popup_opened");
@@ -117,11 +120,15 @@ buttonDelete.forEach(card => {
       }); 
 })
 
- function zoomPhoto(element) {
-  popupImage.src = element.link;
-  popupZoomText.textContent = element.name;
-  openPopupZoom();
-}
 
-cardImage.addEventListener('click', zoomPhoto);
+
+cardImage.addEventListener("click", (event) => {
+  openPopupZoom(popupZoom);
+  popupImage.src = event.target.src;
+  popupZoomText.textContent = cardTitle.textContent;
+});
+
+
+
+
 
