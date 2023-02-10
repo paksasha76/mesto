@@ -23,6 +23,7 @@ let cardLike = Array.from(document.querySelectorAll(".card__btn-like"));
 let popupZoom = document.querySelector(".popup-zoom");
 let popupImage = document.querySelector(".popup-zoom__image");
 let popupZoomText = document.querySelector(".popup-zoom__text");
+let cardImage = document.querySelector(".card__img");
 
 const initialCards = [
     {
@@ -110,11 +111,11 @@ buttonDelete.forEach(card => {
       }); 
 })
 
-/* function zoomPhoto(element) {
+ function zoomPhoto(element) {
   popupImage.src = element.link;
   popupZoomText.textContent = element.name;
   openPopupZoom();
 }
 
-card.addEventListener('click', zoomPhoto);
-*/
+cardImage.addEventListener('click', zoomPhoto);
+
