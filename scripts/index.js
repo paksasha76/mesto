@@ -23,7 +23,7 @@ const cardLike = Array.from(document.querySelectorAll(".card__btn-like"));
 const popupZoom = document.querySelector(".popup-zoom");
 const popupImage = document.querySelector(".popup-zoom__image");
 const popupZoomText = document.querySelector(".popup-zoom__text");
-const cardImage = document.querySelector(".card__img");
+const cardImage = Array.from(document.querySelectorAll(".card__img"));
 const buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
 const cardTitle = document.querySelector(".card__title");
 
@@ -108,10 +108,12 @@ buttonDelete.forEach(card => {
 })
 
 
-cardImage.addEventListener("click", (event) => {
+cardImage.forEach(image => {
+  image.addEventListener("click", (event) => {
   openPopupZoom(popupZoom);
   popupImage.src = event.target.src;
   popupZoomText.textContent = cardTitle.textContent;
+  });
 });
 
 buttonEdit.addEventListener("click", openPopup);
