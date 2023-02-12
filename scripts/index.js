@@ -105,6 +105,13 @@ function AddNewCard() {
   newButtonLike.classList.add('card__btn-like');
   const newButtonDelete = document.createElement('button');
   newButtonDelete.classList.add('card__btn-delete');
+
+  newCard.appendChild(newCardImg);
+  newCard.appendChild(newCardBlock);
+  newCard.appendChild(newButtonDelete);
+  newCardBlock.appendChild(newCardTitle);
+  newCardBlock.appendChild(newButtonLike);
+
 }
 
 cardLike.forEach(like => {
