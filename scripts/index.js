@@ -92,6 +92,21 @@ function handleFormSubmit(event) {
     closePopupAdd();
 }
 
+function AddNewCard() {
+  const newCard = document.createElement('div');
+  newCard.classList.add('card')
+  const newCardImg = document.createElement('img');
+  newCardImg.classList.add('card__img');
+  const newCardBlock = document.createElement('div');
+  newCardBlock.classList.add('card__block');
+  const newCardTitle = document.createElement('h2');
+  newCardTitle.classList.add('card__title');
+  const newButtonLike = document.createElement('button');
+  newButtonLike.classList.add('card__btn-like');
+  const newButtonDelete = document.createElement('button');
+  newButtonDelete.classList.add('card__btn-delete');
+}
+
 cardLike.forEach(like => {
     like.addEventListener('click', function () {
         const listItem = like.closest('.card__btn-like');
