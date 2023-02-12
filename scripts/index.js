@@ -27,6 +27,8 @@ const cardImage = Array.from(document.querySelectorAll(".card__img"));
 const buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
 const cardTitle = document.querySelector(".card__title");
 
+const buttonCreate = document.querySelector(".popup__save_btn-create");
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -67,7 +69,6 @@ function openPopup() {
 }
 
 function openPopupZoom() {
-  
   popupZoom.classList.add("popup_opened");
 }
 
@@ -121,14 +122,12 @@ cardLike.forEach(like => {
       }); 
 })
 
-
 buttonDelete.forEach(card => {
     card.addEventListener('click', function () {
         const listItem = card.closest('.card');
         listItem.remove();
       }); 
 })
-
 
 cardImage.forEach(image => {
   image.addEventListener("click", (event) => {
@@ -147,5 +146,5 @@ buttonCloseAdd.addEventListener("click", closePopupAdd);
 buttonCloseZoom.addEventListener("click", closePopupZoom);
 
 popupForm.addEventListener("submit", handleFormSubmit);
-popupFormAdd.addEventListener("submit", handleFormSubmit);
 
+buttonCreate.addEventListener("click", AddNewCard);
