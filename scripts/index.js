@@ -112,7 +112,8 @@ cardImage.forEach(image => {
   image.addEventListener("click", (event) => {
   openPopupZoom(popupZoom);
   popupImage.src = event.target.src;
-  popupZoomText.textContent = cardTitle.textContent;
+  popupImage.alt = event.target.alt;
+  popupZoomText.textContent = popupImage.alt
   });
 });
 
