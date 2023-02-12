@@ -93,7 +93,7 @@ function handleFormSubmit(event) {
     closePopupAdd();
 }
 
-function AddNewCard() {
+function addNewCard() {
   const newCard = document.createElement('div');
   newCard.classList.add('card')
   const newCardImg = document.createElement('img');
@@ -116,9 +116,8 @@ function AddNewCard() {
 }
 
 cardLike.forEach(like => {
-    like.addEventListener('click', function () {
-        const listItem = like.closest('.card__btn-like');
-        listItem.classList.add('card__btn_like-active');
+    like.addEventListener('click', (event) => {
+        event.target.classList.toggle('card__btn_like-active');
       }); 
 })
 
@@ -147,4 +146,4 @@ buttonCloseZoom.addEventListener("click", closePopupZoom);
 
 popupForm.addEventListener("submit", handleFormSubmit);
 
-buttonCreate.addEventListener("click", AddNewCard);
+buttonCreate.addEventListener("click", addNewCard);
