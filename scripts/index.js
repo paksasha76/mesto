@@ -130,6 +130,12 @@ function addNewCard(name, link) {
 
   newButtonDelete.addEventListener('click', () => newCard.remove())
   newButtonLike.addEventListener('click', () => {newButtonLike.classList.toggle('card__btn_like-active')})
+  newCardImg.addEventListener('click', (event) => {
+    openPopupZoom(popupZoom);
+    popupImage.src = event.target.src;
+    popupImage.alt = event.target.alt;
+    popupZoomText.textContent = popupImage.alt
+    });
 }
 
 
