@@ -13,6 +13,7 @@ const nameInputCard = document.querySelector(".popup__input_type_card-name");
 const linkInputCard = document.querySelector(".popup__input_type_card-link");
 const popupEdit = document.querySelector(".popup__edit");
 
+
 const buttonClose = document.querySelector(".popup__close-btn");
 const buttonCloseAdd = document.querySelector(".popup__close_add-btn");
 
@@ -95,11 +96,13 @@ function handleFormSubmit(event) {
 
 function AddFormSubmit(event) {
   event.preventDefault();
-  addNewCard();
+  const name = nameInputCard.value
+  const link = linkInputCard.value
+  addNewCard(name, link);
   closePopupAdd();
 }
 
-function addNewCard() {
+function addNewCard(name, link) {
   const newCard = document.createElement('div');
   newCard.classList.add('card')
   const newCardImg = document.createElement('img');
@@ -113,6 +116,9 @@ function addNewCard() {
   const newButtonDelete = document.createElement('button');
   newButtonDelete.classList.add('card__btn-delete');
 
+  newCardTitle.textContent = name;
+  newCardImg.src = link;
+
   cards.appendChild(newCard);
   newCard.appendChild(newCardImg);
   newCard.appendChild(newCardBlock);
@@ -120,7 +126,9 @@ function addNewCard() {
   newCardBlock.appendChild(newCardTitle);
   newCardBlock.appendChild(newButtonLike);
 
-  newButtonDelete.addEventListener('click', newCard.remove)
+ 
+
+  newButtonDelete.addEventListener('click', () => newCard.remove())
   newButtonLike.addEventListener('click', () => {newButtonLike.classList.toggle('card__btn_like-active')})
 }
 
@@ -146,7 +154,6 @@ cardImage.forEach(image => {
   popupZoomText.textContent = popupImage.alt
   });
 });
-
 
 buttonEdit.addEventListener("click", openPopup);
 buttonAdd.addEventListener("click", openPopupAdd);
