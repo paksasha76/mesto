@@ -7,11 +7,11 @@ const profileName = document.querySelector(".profile__name");
 const profileJob = document.querySelector(".profile__job");
 
 const buttonAdd = document.querySelector(".profile__add-btn");
-const popupAdd = document.querySelector(".popup__add");
+const popupAdd = document.querySelector(".popup-add");
 const popupFormAdd =  document.querySelector(".popup__form-add");
 const nameInputCard = document.querySelector(".popup__input_type_card-name");
 const linkInputCard = document.querySelector(".popup__input_type_card-link");
-const popupEdit = document.querySelector(".popup__edit");
+const popupEdit = document.querySelector(".popup-edit");
 
 
 const buttonClose = document.querySelector(".popup__close-btn");
