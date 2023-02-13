@@ -28,6 +28,7 @@ const buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
 const cardTitle = document.querySelector(".card__title");
 
 const buttonCreate = document.querySelector(".popup__save_btn-create");
+const cards = document.querySelector(".cards");
 
 const initialCards = [
     {
@@ -90,10 +91,15 @@ function handleFormSubmit(event) {
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     closePopup();
-    closePopupAdd();
 }
 
-function addNewCard() {
+function AddFormSubmit(event) {
+  event.preventDefault();
+  addNewCard(card);
+  closePopupAdd();
+}
+
+function addNewCard(card) {
   const newCard = document.createElement('div');
   newCard.classList.add('card')
   const newCardImg = document.createElement('img');
@@ -107,12 +113,16 @@ function addNewCard() {
   const newButtonDelete = document.createElement('button');
   newButtonDelete.classList.add('card__btn-delete');
 
+  newCardImg.src = card.src;
+  newCardImg.alt = card.name;
+  newCardTitle.textContent = card.name;
+  
+  cards.appendChild(newCard);
   newCard.appendChild(newCardImg);
   newCard.appendChild(newCardBlock);
   newCard.appendChild(newButtonDelete);
   newCardBlock.appendChild(newCardTitle);
   newCardBlock.appendChild(newButtonLike);
-
 }
 
 cardLike.forEach(like => {
@@ -122,7 +132,7 @@ cardLike.forEach(like => {
 })
 
 buttonDelete.forEach(card => {
-    card.addEventListener('click', function () {
+    card.addEventListener('click', () => {
         const listItem = card.closest('.card');
         listItem.remove();
       }); 
@@ -146,4 +156,4 @@ buttonCloseZoom.addEventListener("click", closePopupZoom);
 
 popupForm.addEventListener("submit", handleFormSubmit);
 
-buttonCreate.addEventListener("click", addNewCard);
+popupFormAdd.addEventListener("submit", AddFormSubmit);
