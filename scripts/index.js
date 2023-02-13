@@ -15,7 +15,7 @@ const popupEdit = document.querySelector(".popup-edit");
 
 
 const buttonClose = document.querySelector(".popup__close-btn");
-const buttonCloseAdd = document.querySelector(".popup__close_add-btn");
+const buttonCloseAdd = document.querySelector(".popup__close-btn-add");
 
 const buttonDelete = Array.from(document.querySelectorAll(".card__btn-delete"));
 const card = document.querySelector(".card");
@@ -28,7 +28,7 @@ const cardImage = Array.from(document.querySelectorAll(".card__img"));
 const buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
 const cardTitle = document.querySelector(".card__title");
 
-const buttonCreate = document.querySelector(".popup__save_btn-create");
+const buttonCreate = document.querySelector(".popup__save-btn-create");
 const cards = document.querySelector(".cards");
 
 const initialCards = [
