@@ -95,11 +95,11 @@ function handleFormSubmit(event) {
 
 function AddFormSubmit(event) {
   event.preventDefault();
-  addNewCard(card);
+  addNewCard();
   closePopupAdd();
 }
 
-function addNewCard(card) {
+function addNewCard() {
   const newCard = document.createElement('div');
   newCard.classList.add('card')
   const newCardImg = document.createElement('img');
@@ -113,17 +113,17 @@ function addNewCard(card) {
   const newButtonDelete = document.createElement('button');
   newButtonDelete.classList.add('card__btn-delete');
 
-  newCardImg.src = card.src;
-  newCardImg.alt = card.name;
-  newCardTitle.textContent = card.name;
-  
   cards.appendChild(newCard);
   newCard.appendChild(newCardImg);
   newCard.appendChild(newCardBlock);
   newCard.appendChild(newButtonDelete);
   newCardBlock.appendChild(newCardTitle);
   newCardBlock.appendChild(newButtonLike);
+
+  newButtonDelete.addEventListener('click', newCard.remove)
+  newButtonLike.addEventListener('click', () => {newButtonLike.classList.toggle('card__btn_like-active')})
 }
+
 
 cardLike.forEach(like => {
     like.addEventListener('click', (event) => {
@@ -146,6 +146,7 @@ cardImage.forEach(image => {
   popupZoomText.textContent = popupImage.alt
   });
 });
+
 
 buttonEdit.addEventListener("click", openPopup);
 buttonAdd.addEventListener("click", openPopupAdd);
