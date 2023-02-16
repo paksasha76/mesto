@@ -58,33 +58,40 @@ const initialCards = [
     }
   ];
 
+function openPopup(popup) {
+  popup.classList.add("popup_opened");
+}
+
 function openPopupAdd() {
-    popupAdd.classList.add("popup_opened");
+    openPopup(popupAdd);
     nameInputCard.value = '';
     linkInputCard.value = '';
 }
 
-function openPopup() {
-    popupEdit.classList.add("popup_opened");
+function openPopupProfile() {
+    openPopup(popupEdit);
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
 }
 
 function openPopupZoom() {
-  popupZoom.classList.add("popup_opened");
+  openPopup(popupZoom);
 }
 
-function closePopup() {
-    popupEdit.classList.remove("popup_opened");
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
 }
 
+function closePopupProfile() {
+  closePopup(popupEdit);
+}
 
 function closePopupAdd() {
-    popupAdd.classList.remove("popup_opened");
+  closePopup(popupAdd);
 }
 
 function closePopupZoom() {
-  popupZoom.classList.remove("popup_opened");
+  closePopup(popupZoom);
 }
 
 function handleFormSubmit(event) {
@@ -151,10 +158,10 @@ cardImage.forEach(image => {
   });
 });
 
-buttonEdit.addEventListener("click", openPopup);
+buttonEdit.addEventListener("click", openPopupProfile);
 buttonAdd.addEventListener("click", openPopupAdd);
 
-profileCloseButton.addEventListener("click", closePopup);
+profileCloseButton.addEventListener("click", closePopupProfile);
 buttonCloseAdd.addEventListener("click", closePopupAdd);
 buttonCloseZoom.addEventListener("click", closePopupZoom);
 
