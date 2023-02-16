@@ -138,6 +138,10 @@ buttonDelete.forEach(card => {
       }); 
 })
 
+initialCards.forEach((card) => {
+  addNewCard(card.name, card.link);
+});
+
 cardImage.forEach(image => {
   image.addEventListener("click", (event) => {
   openPopupZoom(popupZoom);
