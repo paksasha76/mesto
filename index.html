@@ -58,11 +58,7 @@
             <button type="button" class="card__btn-delete"></button>
           </div>
           <div class="card">
-            <img
-              class="card__img"
-              src="./images/dombay.png"
-              alt="Домбай"
-            />
+            <img class="card__img" src="./images/dombay.png" alt="Домбай" />
             <div class="card__block">
               <h2 class="card__title">Домбай</h2>
               <button type="button" class="card__btn-like"></button>
@@ -83,11 +79,7 @@
             <button type="button" class="card__btn-delete"></button>
           </div>
           <div class="card">
-            <img
-              class="card__img"
-              src="./images/dombay.png"
-              alt="Домбай"
-            />
+            <img class="card__img" src="./images/dombay.png" alt="Домбай" />
             <div class="card__block">
               <h2 class="card__title">Домбай</h2>
               <button type="button" class="card__btn-like"></button>
@@ -108,6 +100,19 @@
           </div>
         </section>
       </main>
+      <section class="cards">
+      <template id="card">
+        <div class="card">
+          <img class="card__img" src="#" alt="" />
+          <div class="card__block">
+            <h2 class="card__title"></h2>
+            <button type="button" class="card__btn-like"></button>
+          </div>
+          <button type="button" class="card__btn-delete"></button>
+        </div>
+    </template>
+  </section>
+
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
@@ -153,7 +158,12 @@
               name="card-link"
               placeholder="Ссылка на карточку"
             />
-            <button class="popup__save-btn popup__save-btn-create" type="submit">Создать</button>
+            <button
+              class="popup__save-btn popup__save-btn-create"
+              type="submit"
+            >
+              Создать
+            </button>
           </form>
         </div>
       </div>

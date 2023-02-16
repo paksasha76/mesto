@@ -1,6 +1,6 @@
-const popup = document.querySelector(".popup");
+const profilePopup = document.querySelector(".popup");
 const buttonEdit = document.querySelector(".profile__edit-btn");
-const popupForm = document.querySelector(".popup__form");
+const profileForm = document.querySelector(".popup__form");
 const nameInput = document.querySelector(".popup__input_type_name");
 const jobInput = document.querySelector(".popup__input_type_job");
 const profileName = document.querySelector(".profile__name");
@@ -14,7 +14,7 @@ const linkInputCard = document.querySelector(".popup__input_type_card-link");
 const popupEdit = document.querySelector(".popup-edit");
 
 
-const buttonClose = document.querySelector(".popup__close-btn");
+const profileCloseButton = document.querySelector(".popup__close-btn");
 const buttonCloseAdd = document.querySelector(".popup__close-btn-add");
 
 const buttonDelete = Array.from(document.querySelectorAll(".card__btn-delete"));
@@ -94,7 +94,7 @@ function handleFormSubmit(event) {
     closePopup();
 }
 
-function AddFormSubmit(event) {
+function addFormSubmit(event) {
   event.preventDefault();
   const name = nameInputCard.value
   const link = linkInputCard.value
@@ -103,34 +103,20 @@ function AddFormSubmit(event) {
 }
 
 function addNewCard(name, link) {
-  const newCard = document.createElement('div');
-  newCard.classList.add('card')
-  const newCardImg = document.createElement('img');
-  newCardImg.classList.add('card__img');
-  const newCardBlock = document.createElement('div');
-  newCardBlock.classList.add('card__block');
-  const newCardTitle = document.createElement('h2');
-  newCardTitle.classList.add('card__title');
-  const newButtonLike = document.createElement('button');
-  newButtonLike.classList.add('card__btn-like');
-  const newButtonDelete = document.createElement('button');
-  newButtonDelete.classList.add('card__btn-delete');
+  const template = document.querySelector("#card").content
+  const newCard = template.querySelector(".card").cloneNode(true);
+  const cardImage = newCard.querySelector(".card__img");
+  const newCardTitle = newCard.querySelector(".card__title");
+  const newButtonDelete = newCard.querySelector(".card__btn-delete");
+  const newButtonLike = newCard.querySelector(".card__btn-like");
+  cardImage.src = link;
+  cardImage.alt = name;
+  newCardTitle.textContent = cardImage.alt
+  cards.prepend(newCard)
 
-  newCardTitle.textContent = name;
-  newCardImg.src = link;
-
-  cards.appendChild(newCard);
-  newCard.appendChild(newCardImg);
-  newCard.appendChild(newCardBlock);
-  newCard.appendChild(newButtonDelete);
-  newCardBlock.appendChild(newCardTitle);
-  newCardBlock.appendChild(newButtonLike);
-
- 
-
-  newButtonDelete.addEventListener('click', () => newCard.remove())
-  newButtonLike.addEventListener('click', () => {newButtonLike.classList.toggle('card__btn_like-active')})
-  newCardImg.addEventListener('click', (event) => {
+  newButtonDelete.addEventListener("click", () => newCard.remove());
+  newButtonLike.addEventListener("click", () => newButtonLike.classList.toggle('card__btn_like-active'));
+  cardImage.addEventListener('click', (event) => {
     openPopupZoom(popupZoom);
     popupImage.src = event.target.src;
     popupImage.alt = event.target.alt;
@@ -164,10 +150,10 @@ cardImage.forEach(image => {
 buttonEdit.addEventListener("click", openPopup);
 buttonAdd.addEventListener("click", openPopupAdd);
 
-buttonClose.addEventListener("click", closePopup);
+profileCloseButton.addEventListener("click", closePopup);
 buttonCloseAdd.addEventListener("click", closePopupAdd);
 buttonCloseZoom.addEventListener("click", closePopupZoom);
 
-popupForm.addEventListener("submit", handleFormSubmit);
+profileForm.addEventListener("submit", handleFormSubmit);
 
-popupFormAdd.addEventListener("submit", AddFormSubmit);
+popupFormAdd.addEventListener("submit", addFormSubmit);
