@@ -107,7 +107,7 @@ function handleAddFormSubmit(event) {
 }
 
 function createCard(name, link) {
-  const template = document.querySelector("#card").content
+  const template = document.querySelector("#card").content;
   const cardElement = template.querySelector(".card").cloneNode(true);
   const cardImage = cardElement.querySelector(".card__img");
   const newCardTitle = cardElement.querySelector(".card__title");
@@ -115,7 +115,7 @@ function createCard(name, link) {
   const newButtonLike = cardElement.querySelector(".card__btn-like");
   cardImage.src = link;
   cardImage.alt = name;
-  newCardTitle.textContent = cardImage.alt
+  newCardTitle.textContent = cardImage.alt;
 
   newButtonDelete.addEventListener("click", () => cardElement.remove());
   newButtonLike.addEventListener("click", () => newButtonLike.classList.toggle('card__btn_like-active'));
@@ -123,15 +123,15 @@ function createCard(name, link) {
     openPopupZoom(popupZoom);
     popupImage.src = event.target.src;
     popupImage.alt = event.target.alt;
-    popupZoomText.textContent = popupImage.alt
+    popupZoomText.textContent = popupImage.alt;
     });
 
-return cardElement
+return cardElement;
 }
 
 function addNewCard(name, link) {
-  const newCard = createCard(name, link)
-  cards.prepend(newCard)
+  const newCard = createCard(name, link);
+  cards.prepend(newCard);
 }
 
 initialCards.forEach((card) => {
