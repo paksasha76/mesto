@@ -17,19 +17,16 @@ const popupEdit = document.querySelector(".popup-edit");
 const profileCloseButton = document.querySelector(".popup__close-btn");
 const buttonCloseAdd = document.querySelector(".popup__close-btn-add");
 
-const buttonDelete = Array.from(document.querySelectorAll(".card__btn-delete"));
+
 const card = document.querySelector(".card");
-const cardLike = Array.from(document.querySelectorAll(".card__btn-like"));
 
 const popupZoom = document.querySelector(".popup-zoom");
 const popupImage = document.querySelector(".popup-zoom__image");
 const popupZoomText = document.querySelector(".popup-zoom__text");
-const cardImage = Array.from(document.querySelectorAll(".card__img"));
 const buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
 const cardTitle = document.querySelector(".card__title");
 
 const buttonCreate = document.querySelector(".popup__save-btn-create");
-const cards = document.querySelector(".cards");
 
 const initialCards = [
     {
@@ -110,6 +107,7 @@ function handleAddFormSubmit(event) {
 }
 
 function addNewCard(name, link) {
+  const cards = document.querySelector(".cards");
   const template = document.querySelector("#card").content
   const newCard = template.querySelector(".card").cloneNode(true);
   const cardImage = newCard.querySelector(".card__img");
@@ -131,32 +129,10 @@ function addNewCard(name, link) {
     });
 }
 
-
-cardLike.forEach(like => {
-    like.addEventListener('click', (event) => {
-        event.target.classList.toggle('card__btn_like-active');
-      }); 
-})
-
-buttonDelete.forEach(card => {
-    card.addEventListener('click', () => {
-        const listItem = card.closest('.card');
-        listItem.remove();
-      }); 
-})
-
 initialCards.forEach((card) => {
   addNewCard(card.name, card.link);
 });
 
-cardImage.forEach(image => {
-  image.addEventListener("click", (event) => {
-  openPopupZoom(popupZoom);
-  popupImage.src = event.target.src;
-  popupImage.alt = event.target.alt;
-  popupZoomText.textContent = popupImage.alt
-  });
-});
 
 buttonEdit.addEventListener("click", openPopupProfile);
 buttonAdd.addEventListener("click", openPopupAdd);
