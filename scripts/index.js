@@ -17,7 +17,7 @@ const popupEdit = document.querySelector(".popup-edit");
 const profileCloseButton = document.querySelector(".popup__close-btn");
 const buttonCloseAdd = document.querySelector(".popup__close-btn-add");
 
-
+const cards = document.querySelector(".cards");
 const card = document.querySelector(".card");
 
 const popupZoom = document.querySelector(".popup-zoom");
@@ -101,25 +101,23 @@ function handleAddFormSubmit(event) {
   const name = nameInputCard.value
   const link = linkInputCard.value
   addNewCard(name, link);
-  closePopupAdd();
   nameInputCard.value = '';
   linkInputCard.value = '';
+  closePopupAdd();
 }
 
-function addNewCard(name, link) {
-  const cards = document.querySelector(".cards");
+function createCard(name, link) {
   const template = document.querySelector("#card").content
-  const newCard = template.querySelector(".card").cloneNode(true);
-  const cardImage = newCard.querySelector(".card__img");
-  const newCardTitle = newCard.querySelector(".card__title");
-  const newButtonDelete = newCard.querySelector(".card__btn-delete");
-  const newButtonLike = newCard.querySelector(".card__btn-like");
+  const cardElement = template.querySelector(".card").cloneNode(true);
+  const cardImage = cardElement.querySelector(".card__img");
+  const newCardTitle = cardElement.querySelector(".card__title");
+  const newButtonDelete = cardElement.querySelector(".card__btn-delete");
+  const newButtonLike = cardElement.querySelector(".card__btn-like");
   cardImage.src = link;
   cardImage.alt = name;
   newCardTitle.textContent = cardImage.alt
-  cards.prepend(newCard)
 
-  newButtonDelete.addEventListener("click", () => newCard.remove());
+  newButtonDelete.addEventListener("click", () => cardElement.remove());
   newButtonLike.addEventListener("click", () => newButtonLike.classList.toggle('card__btn_like-active'));
   cardImage.addEventListener('click', (event) => {
     openPopupZoom(popupZoom);
@@ -127,6 +125,13 @@ function addNewCard(name, link) {
     popupImage.alt = event.target.alt;
     popupZoomText.textContent = popupImage.alt
     });
+
+return cardElement
+}
+
+function addNewCard(name, link) {
+  const newCard = createCard(name, link)
+  cards.prepend(newCard)
 }
 
 initialCards.forEach((card) => {
