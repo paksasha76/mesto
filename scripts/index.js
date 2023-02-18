@@ -94,14 +94,14 @@ function closePopupZoom() {
   closePopup(popupZoom);
 }
 
-function handleFormSubmit(event) {
+function handleProfileFormSubmit(event) {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    closePopup();
+    closePopupProfile();
 }
 
-function addFormSubmit(event) {
+function handleAddFormSubmit(event) {
   event.preventDefault();
   const name = nameInputCard.value
   const link = linkInputCard.value
@@ -165,6 +165,6 @@ profileCloseButton.addEventListener("click", closePopupProfile);
 buttonCloseAdd.addEventListener("click", closePopupAdd);
 buttonCloseZoom.addEventListener("click", closePopupZoom);
 
-profileForm.addEventListener("submit", handleFormSubmit);
+profileForm.addEventListener("submit", handleProfileFormSubmit);
 
-popupFormAdd.addEventListener("submit", addFormSubmit);
+popupFormAdd.addEventListener("submit", handleAddFormSubmit);
