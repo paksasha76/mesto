@@ -61,8 +61,6 @@ function openPopup(popup) {
 
 function openPopupAdd() {
     openPopup(popupAdd);
-    nameInputCard.value = '';
-    linkInputCard.value = '';
 }
 
 function openPopupProfile() {
@@ -104,6 +102,8 @@ function handleAddFormSubmit(event) {
   const link = linkInputCard.value
   addNewCard(name, link);
   closePopupAdd();
+  nameInputCard.value = '';
+  linkInputCard.value = '';
 }
 
 function addNewCard(name, link) {
