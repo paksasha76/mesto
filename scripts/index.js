@@ -31,7 +31,7 @@ const buttonCreate = document.querySelector(".popup__save-btn-create");
 const initialCards = [
     {
       name: 'Токио',
-      link: 'https://pbs.twimg.com/media/EkY_XdqXcAEHx_r.jpg'
+      link: 'https://preview.redd.it/5nxgafq6c9d71.jpg?auto=webp&s=4a5ad8cf9c7bf372897f570eb0fdca2b2ba52ea6'
     },
     {
       name: 'Челябинская область',
