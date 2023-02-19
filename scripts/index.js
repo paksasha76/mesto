@@ -30,8 +30,8 @@ const buttonCreate = document.querySelector(".popup__save-btn-create");
 
 const initialCards = [
     {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+      name: 'Токио',
+      link: 'https://pbs.twimg.com/media/EkY_XdqXcAEHx_r.jpg'
     },
     {
       name: 'Челябинская область',
