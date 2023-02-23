@@ -152,30 +152,25 @@ popupFormAdd.addEventListener("submit", handleAddFormSubmit);
 
 document.addEventListener("keydown", function(event) {
   if (event.key === 'Escape') {
-  
     closePopupProfile();
     closePopupAdd();
     closePopupZoom();
   }
 });
 
-popupEdit.addEventListener('click', (event) => {
- if (event.target == popupEdit) {
-  closePopupProfile()
-  }
- }
-)
-
-popupAdd.addEventListener('click',  (event) => {
-  if (event.target == popupAdd) {
-    closePopupAdd()
+function popupCloseOverlay(popup) {
+popup.addEventListener('click', (event) => {
+  if (event.target == popup) {
+   closePopupProfile()
+   closePopupAdd()
+   closePopupZoom()
    }
   }
-)
+ )
+}
 
-popupZoom.addEventListener('click',  (event) => {
-  if (event.target == popupZoom) {
-    closePopupZoom()
-   }
-  }
-)
+popupCloseOverlay(popupEdit)
+popupCloseOverlay(popupAdd)
+popupCloseOverlay(popupZoom)
+
+
