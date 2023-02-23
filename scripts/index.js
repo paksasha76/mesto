@@ -149,3 +149,9 @@ buttonCloseZoom.addEventListener("click", closePopupZoom);
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 popupFormAdd.addEventListener("submit", handleAddFormSubmit);
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === 'Escape') {
+    closePopupProfile();
+  }
+});

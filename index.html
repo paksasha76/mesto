@@ -58,12 +58,18 @@
               class="popup__input popup__input_type_name"
               name="name"
               placeholder="Имя"
+              required
+              minlength="2"
+              maxlength="40"
             />
             <input
               type="text"
               class="popup__input popup__input_type_job"
               name="about-me"
               placeholder="О себе"
+              required
+              minlength="2"
+              maxlength="200"
             />
             <button class="popup__save-btn" type="submit">Сохранить</button>
           </form>
@@ -83,12 +89,16 @@
               class="popup__input popup__input_type_card-name"
               name="card-name"
               placeholder="Название"
+              required
+              minlength="2"
+              maxlength="30"
             />
             <input
-              type="text"
+              type="URL"
               class="popup__input popup__input_type_card-link"
               name="card-link"
               placeholder="Ссылка на карточку"
+              required
             />
             <button
               class="popup__save-btn popup__save-btn-create"
