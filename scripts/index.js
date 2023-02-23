@@ -152,8 +152,30 @@ popupFormAdd.addEventListener("submit", handleAddFormSubmit);
 
 document.addEventListener("keydown", function(event) {
   if (event.key === 'Escape') {
+  
     closePopupProfile();
     closePopupAdd();
     closePopupZoom();
   }
 });
+
+popupEdit.addEventListener('click', (event) => {
+ if (event.target == popupEdit) {
+  closePopupProfile()
+  }
+ }
+)
+
+popupAdd.addEventListener('click',  (event) => {
+  if (event.target == popupAdd) {
+    closePopupAdd()
+   }
+  }
+)
+
+popupZoom.addEventListener('click',  (event) => {
+  if (event.target == popupZoom) {
+    closePopupZoom()
+   }
+  }
+)
