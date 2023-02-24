@@ -101,8 +101,7 @@ function handleAddFormSubmit(event) {
   const name = nameInputCard.value
   const link = linkInputCard.value
   addNewCard(name, link);
-  nameInputCard.value = '';
-  linkInputCard.value = '';
+  event.target.reset();
   closePopupAdd();
 }
 
@@ -185,4 +184,4 @@ else {
 }
 }
 
-popupFormAdd.addEventListener('change', required)
+popupFormAdd.addEventListener('keydown', required)
