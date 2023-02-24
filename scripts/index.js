@@ -174,7 +174,8 @@ popupCloseOverlay(popupAdd)
 popupCloseOverlay(popupZoom)
 
 
-if (nameInputCard.value.length == 0 || linkInputCard.value.length == 0) {
+function required() {
+if (nameInputCard.value.length === 0 || linkInputCard.value.length === 0) {
   buttonCreate.disabled = true
   buttonCreate.classList.add("popup__save-btn-disabled")
 }
@@ -182,3 +183,6 @@ else {
   buttonCreate.disabled = false
   buttonCreate.classList.remove("popup__save-btn-disabled")
 }
+}
+
+popupFormAdd.addEventListener('change', required)
