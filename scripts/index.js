@@ -12,6 +12,7 @@ const popupFormAdd =  document.querySelector(".popup__form-add");
 const nameInputCard = document.querySelector(".popup__input_type_card-name");
 const linkInputCard = document.querySelector(".popup__input_type_card-link");
 const popupEdit = document.querySelector(".popup-edit");
+const saveButtonEdit = document.querySelector(".popup__save-btn-edit")
 
 
 const profileCloseButton = document.querySelector(".popup__close-btn");
@@ -173,7 +174,7 @@ popupCloseOverlay(popupAdd)
 popupCloseOverlay(popupZoom)
 
 
-function required() {
+function requiredAdd() {
 if (nameInputCard.value.length === 0 || linkInputCard.value.length === 0) {
   buttonCreate.disabled = true
   buttonCreate.classList.add("popup__save-btn-disabled")
@@ -184,4 +185,16 @@ else {
 }
 }
 
-popupFormAdd.addEventListener('keydown', required)
+function requiredEdit() {
+  if (nameInput.value.length === 0 || jobInput.value.length === 0) {
+    saveButtonEdit.disabled = true
+    saveButtonEdit.classList.add("popup__save-btn-disabled")
+  }
+  else {
+    saveButtonEdit.disabled = false
+    saveButtonEdit.classList.remove("popup__save-btn-disabled")
+  }
+  }
+
+popupFormAdd.addEventListener('keydown', requiredAdd);
+profileForm.addEventListener('keydown', requiredEdit);
