@@ -174,27 +174,25 @@ popupCloseOverlay(popupAdd)
 popupCloseOverlay(popupZoom)
 
 
+function required(firstField, secondField, button) {
+  if (firstField.value.length === 0 || secondField.value.length === 0) {
+    button.disabled = true
+    button.classList.add("popup__save-btn-disabled")
+  }
+  else {
+    button.disabled = false
+    button.classList.remove("popup__save-btn-disabled")
+  }
+  }
+
+
 function requiredAdd() {
-if (nameInputCard.value.length === 0 || linkInputCard.value.length === 0) {
-  buttonCreate.disabled = true
-  buttonCreate.classList.add("popup__save-btn-disabled")
-}
-else {
-  buttonCreate.disabled = false
-  buttonCreate.classList.remove("popup__save-btn-disabled")
-}
+  required(nameInputCard, linkInputCard, buttonCreate);
 }
 
 function requiredEdit() {
-  if (nameInput.value.length === 0 || jobInput.value.length === 0) {
-    saveButtonEdit.disabled = true
-    saveButtonEdit.classList.add("popup__save-btn-disabled")
-  }
-  else {
-    saveButtonEdit.disabled = false
-    saveButtonEdit.classList.remove("popup__save-btn-disabled")
-  }
-  }
+  required(nameInput, jobInput, saveButtonEdit);
+}
 
 popupFormAdd.addEventListener('keydown', requiredAdd);
 profileForm.addEventListener('keydown', requiredEdit);
