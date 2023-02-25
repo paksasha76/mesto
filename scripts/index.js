@@ -150,7 +150,7 @@ profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 popupFormAdd.addEventListener("submit", handleAddFormSubmit);
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", (event) => {
   if (event.key === 'Escape') {
     closePopupProfile();
     closePopupAdd();
@@ -161,29 +161,29 @@ document.addEventListener("keydown", function(event) {
 function popupCloseOverlay(popup) {
 popup.addEventListener('click', (event) => {
   if (event.target == popup) {
-   closePopupProfile()
-   closePopupAdd()
-   closePopupZoom()
+   closePopupProfile();
+   closePopupAdd();
+   closePopupZoom();
    }
   }
  )
 }
 
-popupCloseOverlay(popupEdit)
-popupCloseOverlay(popupAdd)
-popupCloseOverlay(popupZoom)
+popupCloseOverlay(popupEdit);
+popupCloseOverlay(popupAdd);
+popupCloseOverlay(popupZoom);
 
 
 function required(firstField, secondField, button) {
   if (firstField.value.length === 0 || secondField.value.length === 0) {
-    button.disabled = true
-    button.classList.add("popup__save-btn-disabled")
+    button.disabled = true;
+    button.classList.add("popup__save-btn-disabled");
   }
   else {
-    button.disabled = false
-    button.classList.remove("popup__save-btn-disabled")
+    button.disabled = false;
+    button.classList.remove("popup__save-btn-disabled");
   }
-  }
+}
 
 
 function requiredAdd() {
