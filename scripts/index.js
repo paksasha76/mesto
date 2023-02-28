@@ -173,7 +173,6 @@ popupCloseOverlay(popupEdit);
 popupCloseOverlay(popupAdd);
 popupCloseOverlay(popupZoom);
 
-
 function required(firstField, secondField, button) {
   if (firstField.value.length === 0 || secondField.value.length === 0) {
     button.disabled = true;
@@ -184,7 +183,6 @@ function required(firstField, secondField, button) {
     button.classList.remove("popup__save-btn-disabled");
   }
 }
-
 
 function requiredAdd() {
   required(nameInputCard, linkInputCard, buttonCreate);
