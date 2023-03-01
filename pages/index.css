@@ -37,6 +37,7 @@
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/card/__btn-delete/card__btn-delete.css);
 @import url(../blocks/card/__btn-like/__active/card__btn_like-active.css);
+@import url(../blocks/popup-zoom/popup-zoom.css);
 @import url(../blocks/popup-zoom/__container/popup-zoom__container.css);
 @import url(../blocks/popup-zoom/__image/popup-zoom__image.css);
 @import url(../blocks/popup-zoom/__text/popup-zoom__text.css);

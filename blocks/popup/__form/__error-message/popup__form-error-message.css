@@ -9,9 +9,10 @@
   max-width: 30px;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1279px) {
   .popup__form-error-message {
     left: 16px;
     bottom: 20px;
+    max-width: 16px;
   }
 }
