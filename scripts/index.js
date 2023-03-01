@@ -57,6 +57,7 @@ const initialCards = [
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
+  popup.addEventListener("click", bindOverlayClickListener);
 }
 
 function openPopupAdd() {
@@ -168,6 +169,15 @@ function bindOverlayClickListener(popup) {
   });
 }
 
-bindOverlayClickListener(popupEdit);
-bindOverlayClickListener(popupAdd);
-bindOverlayClickListener(popupZoom);
+for (let i = 0; i < 3; i++) {
+  if (i === 0) {
+  popup = popupEdit;
+  }
+  else if (i === 1) {
+    popup = popupAdd;
+  }
+  else {
+    popup = popupZoom;
+  }
+  bindOverlayClickListener(popup); 
+} 
