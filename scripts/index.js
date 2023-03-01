@@ -56,6 +56,7 @@ const initialCards = [
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", closePopupEsc);
 }
 
 function openPopupAdd() {
@@ -74,6 +75,7 @@ function openPopupZoom() {
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopupEsc);
 }
 
 function closePopupProfile() {
@@ -154,17 +156,9 @@ popupFormAdd.addEventListener("submit", handleAddFormSubmit);
 function closePopupEsc(event) {
   if (event.key === "Escape") {
     const popupOpened = document.querySelector(".popup_opened");
-    closePopup();
+    closePopup(popupOpened);
   }
 }
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closePopupProfile();
-    closePopupAdd();
-    closePopupZoom();
-  }
-});
 
 function bindOverlayClickListener(popup) {
   popup.addEventListener("click", (event) => {
