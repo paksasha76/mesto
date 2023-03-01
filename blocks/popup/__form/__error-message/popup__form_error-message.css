@@ -1,4 +1,4 @@
-.form__error-message {
+.popup__form_error-message {
   color: red;
   position: relative;
   font-size: 12px;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 650px) {
-  .form__error-message {
+  .popup__form_error-message {
     left: 16px;
     bottom: 20px;
   }
