@@ -104,18 +104,20 @@ function handleAddFormSubmit(event) {
   closePopupAdd();
 }
 
+const template = document.querySelector("#card").content;
+const cardElement = template.querySelector(".card");
+
 function createCard(name, link) {
-  const template = document.querySelector("#card").content;
-  const cardElement = template.querySelector(".card").cloneNode(true);
-  const cardImage = cardElement.querySelector(".card__img");
-  const newCardTitle = cardElement.querySelector(".card__title");
-  const newButtonDelete = cardElement.querySelector(".card__btn-delete");
-  const newButtonLike = cardElement.querySelector(".card__btn-like");
+  const cardClone = cardElement.cloneNode(true);
+  const cardImage = cardClone.querySelector(".card__img");
+  const newCardTitle = cardClone.querySelector(".card__title");
+  const newButtonDelete = cardClone.querySelector(".card__btn-delete");
+  const newButtonLike = cardClone.querySelector(".card__btn-like");
   cardImage.src = link;
   cardImage.alt = name;
   newCardTitle.textContent = cardImage.alt;
 
-  newButtonDelete.addEventListener("click", () => cardElement.remove());
+  newButtonDelete.addEventListener("click", () => cardClone.remove());
   newButtonLike.addEventListener("click", () =>
     newButtonLike.classList.toggle("card__btn_like-active")
   );
@@ -126,7 +128,7 @@ function createCard(name, link) {
     popupZoomText.textContent = popupImage.alt;
   });
 
-  return cardElement;
+  return cardClone;
 }
 
 function addNewCard(name, link) {
@@ -149,6 +151,13 @@ profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 popupFormAdd.addEventListener("submit", handleAddFormSubmit);
 
+function closePopupEsc(event) {
+  if (event.key === "Escape") {
+    const popupOpened = document.querySelector(".popup_opened");
+    closePopup();
+  }
+}
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closePopupProfile();
@@ -160,9 +169,7 @@ document.addEventListener("keydown", (event) => {
 function bindOverlayClickListener(popup) {
   popup.addEventListener("click", (event) => {
     if (event.target == popup) {
-      closePopupProfile();
-      closePopupAdd();
-      closePopupZoom();
+      closePopup(popup);
     }
   });
 }
