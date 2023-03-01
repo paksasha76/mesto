@@ -1,4 +1,4 @@
-const settings = {
+const validation = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__save-btn',
@@ -7,66 +7,62 @@ const settings = {
   errorClass: 'form__error-message_active'
 }
 
-function enableValidation (settings) {
-  const formList = Array.from(document.querySelectorAll(settings.formSelector));
-  formList.forEach((formElement) => {
-      setEventListeners(formElement, settings);
+function enableValidation (validation) {
+  const form = Array.from(document.querySelectorAll(validation.formSelector));
+  form.forEach( function(formElement) {
+      setEventListeners(formElement, validation);
   });
 }
 
-function checkInputValidity (formElement, inputElement, settings) {
+function checkInputValidity (formElement, inputElement, validation) {
   if (inputElement.validity.valid === true) {
-      hideInputError(formElement, inputElement, settings);
+      hideInputError(formElement, inputElement, validation);
   } else {
-      showInputError(formElement, inputElement, inputElement.validationMessage, settings);
+      showInputError(formElement, inputElement, inputElement.validationMessage, validation);
   }
 }
 
-function showInputError (formElement, inputElement, errorMessage, settings) {
+function showInputError (formElement, inputElement, error, validation) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`); 
-  inputElement.classList.add(settings.inputErrorClass);
-  errorElement.classList.add(settings.errorClass);
-  errorElement.textContent = errorMessage;
+  inputElement.classList.add(validation.inputErrorClass);
+  errorElement.classList.add(validation.errorClass);
+  errorElement.textContent = error;
 }
 
-
-function hideInputError (formElement, inputElement, settings) {
+function hideInputError (formElement, inputElement, validation) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.remove(settings.inputErrorClass);
-  errorElement.classList.remove(settings.errorClass);
+  inputElement.classList.remove(validation.inputErrorClass);
+  errorElement.classList.remove(validation.errorClass);
   errorElement.textContent = '';
 }
 
+function setEventListeners (formElement, validation) {
+  const input = Array.from(formElement.querySelectorAll(validation.inputSelector));
+  const buttonElement = formElement.querySelector(validation.submitButtonSelector);
+  required(input, buttonElement, validation); 
 
-function setEventListeners (formElement, settings) {
-  const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
-  const buttonElement = formElement.querySelector(settings.submitButtonSelector);
-  toggleButtonState(inputList, buttonElement, settings); 
-
-  inputList.forEach((inputElement) => {  
-      inputElement.addEventListener('input', () => { 
-          checkInputValidity(formElement, inputElement, settings);
-          toggleButtonState(inputList, buttonElement, settings);
+  input.forEach((inputElement) => {  
+      inputElement.addEventListener('input', function() { 
+          checkInputValidity(formElement, inputElement, validation);
+          required(input, buttonElement, validation);
       });
   });
 };
 
-
-function toggleButtonState (inputList, buttonElement, settings) {
-  if (hasInvalidInput(inputList)) {
-      buttonElement.classList.add(settings.inactiveButtonClass);
+function required (input, buttonElement, validation) {
+  if (hasInvalidInput(input)) {
+      buttonElement.classList.add(validation.inactiveButtonClass);
       buttonElement.setAttribute('disabled', true);
   } else {
-      buttonElement.classList.remove(settings.inactiveButtonClass);
+      buttonElement.classList.remove(validation.inactiveButtonClass);
       buttonElement.removeAttribute('disabled');
   }
 }
 
-
-function hasInvalidInput(inputList) {
-  return inputList.some((inputElement) => {
-      return !inputElement.validity.valid;
+function hasInvalidInput(input) {
+  return input.some( function(inputElement) {
+      return !(inputElement.validity.valid);
   })
 }
 
-enableValidation(settings);
+enableValidation(validation);

@@ -172,25 +172,3 @@ popup.addEventListener('click', (event) => {
 popupCloseOverlay(popupEdit);
 popupCloseOverlay(popupAdd);
 popupCloseOverlay(popupZoom);
-
-function required(firstField, secondField, button) {
-  if (firstField.value.length === 0 || secondField.value.length === 0) {
-    button.disabled = true;
-    button.classList.add("popup__save-btn-disabled");
-  }
-  else {
-    button.disabled = false;
-    button.classList.remove("popup__save-btn-disabled");
-  }
-}
-
-function requiredAdd() {
-  required(nameInputCard, linkInputCard, buttonCreate);
-}
-
-function requiredEdit() {
-  required(nameInput, jobInput, saveButtonEdit);
-}
-
-popupFormAdd.addEventListener('keydown', requiredAdd);
-profileForm.addEventListener('keydown', requiredEdit);

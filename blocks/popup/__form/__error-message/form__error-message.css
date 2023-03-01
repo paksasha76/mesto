@@ -1,6 +1,9 @@
 .form__error-message {
+    color: red;
+    position: relative;
     font-size: 12px;
     line-height: 15px;
-    color: red;
     display: none;
+    left: 34px;
+    bottom: 20px;
 }
