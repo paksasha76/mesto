@@ -1,18 +1,16 @@
 .popup__form-error-message {
   color: red;
-  position: relative;
+  position: absolute;
   font-size: 12px;
   line-height: 15px;
   display: none;
   left: 34px;
-  bottom: 20px;
-  max-width: 30px;
+  bottom: 160px;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 650px) {
   .popup__form-error-message {
     left: 16px;
-    bottom: 20px;
-    max-width: 16px;
+    bottom: 140px;
   }
 }

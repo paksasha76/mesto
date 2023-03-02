@@ -77,6 +77,7 @@ function openPopupZoom() {
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
+  popup.removeEventListener("click", bindOverlayClickListener);
 }
 
 function closePopupProfile() {
@@ -107,8 +108,8 @@ function handleAddFormSubmit(event) {
   closePopupAdd();
 }
 
-const template = document.querySelector("#card").content;
-const cardElement = template.querySelector(".card");
+const cardTemplate = document.querySelector("#card").content;
+const cardElement = cardTemplate.querySelector(".card");
 
 function createCard(name, link) {
   const cardClone = cardElement.cloneNode(true);
@@ -169,15 +170,7 @@ function bindOverlayClickListener(popup) {
   });
 }
 
-for (let i = 0; i < 3; i++) {
-  if (i === 0) {
-  popup = popupEdit;
-  }
-  else if (i === 1) {
-    popup = popupAdd;
-  }
-  else {
-    popup = popupZoom;
-  }
-  bindOverlayClickListener(popup); 
-} 
+const allPopups = Array.from(document.querySelectorAll(".popup"));
+allPopups.forEach((popup) => {
+  bindOverlayClickListener(popup);
+});
