@@ -5,12 +5,13 @@
   line-height: 15px;
   display: none;
   left: 34px;
-  bottom: 160px;
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 650px) {
   .popup__form-error-message {
     left: 16px;
-    bottom: 140px;
+    margin-bottom: 100px;
   }
 }
+
