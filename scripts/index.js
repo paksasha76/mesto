@@ -57,10 +57,10 @@ const initialCards = [
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
-  popup.addEventListener("click", bindOverlayClickListener);
 }
 
 function openPopupAdd() {
+  toggleSubmitNewButton();
   openPopup(popupAdd);
 }
 
@@ -77,7 +77,6 @@ function openPopupZoom() {
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
-  popup.removeEventListener("click", bindOverlayClickListener);
 }
 
 function closePopupProfile() {
@@ -131,7 +130,6 @@ function createCard(name, link) {
     popupImage.alt = event.target.alt;
     popupZoomText.textContent = popupImage.alt;
   });
-
   return cardClone;
 }
 
@@ -162,9 +160,16 @@ function closePopupEsc(event) {
   }
 }
 
+function toggleSubmitNewButton() {
+  if (nameInputCard.value.length === 0 || linkInputCard.value.length === 0) {
+    buttonCreate.disabled = true;
+    buttonCreate.classList.add("popup__save-btn-disabled");
+  }
+}
+
 function bindOverlayClickListener(popup) {
   popup.addEventListener("click", (event) => {
-    if (event.target == popup) {
+    if (event.target === popup) {
       closePopup(popup);
     }
   });
