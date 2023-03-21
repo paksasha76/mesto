@@ -1,4 +1,4 @@
-import { FormValidate } from "./FormValidator.js";
+import FormValidate from "./FormValidator.js";
 
 const buttonEdit = document.querySelector(".profile__edit-btn");
 const profileForm = document.querySelector(".popup__form");

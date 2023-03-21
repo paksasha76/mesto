@@ -1,6 +1,4 @@
-export { FormValidate };
-
-class FormValidate {
+export default class FormValidate {
   constructor(object, formElement) {
     this._formSelector = object.formSelector;
     this._inputSelector = object.inputSelector;
