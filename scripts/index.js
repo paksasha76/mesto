@@ -1,4 +1,4 @@
-import FormValidate from "./FormValidator.js";
+import FormValidator from "./FormValidator.js";
 
 const buttonEdit = document.querySelector(".profile__edit-btn");
 const profileForm = document.querySelector(".popup__form");
@@ -191,8 +191,14 @@ allPopups.forEach((popup) => {
   bindOverlayClickListener(popup);
 });
 
-const profileFormValidate = new FormValidate(validationConfig, document.querySelector('.popup__form-edit'));
+const profileFormValidate = new FormValidator(
+  validationConfig,
+  document.querySelector(".popup__form-edit")
+);
 profileFormValidate.enablevalidationConfig();
 
-const cardFormValidate = new FormValidate(validationConfig, document.querySelector('.popup__form-add'));
+const cardFormValidate = new FormValidator(
+  validationConfig,
+  document.querySelector(".popup__form-add")
+);
 cardFormValidate.enablevalidationConfig();
