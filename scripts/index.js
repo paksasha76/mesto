@@ -1,3 +1,5 @@
+import { FormValidate } from "./FormValidator.js";
+
 const buttonEdit = document.querySelector(".profile__edit-btn");
 const profileForm = document.querySelector(".popup__form");
 const nameInput = document.querySelector(".popup__input_type_name");
@@ -26,6 +28,15 @@ const buttonCloseZoom = document.querySelector(".popup-zoom__close-btn");
 const cardTitle = document.querySelector(".card__title");
 
 const buttonCreate = document.querySelector(".popup__save-btn-create");
+
+const validationConfig = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__save-btn",
+  inactiveButtonClass: "popup__save-btn-disabled",
+  inputErrorClass: "form__error-line",
+  errorClass: "form__error-message_active",
+};
 
 const initialCards = [
   {
@@ -179,3 +190,9 @@ const allPopups = Array.from(document.querySelectorAll(".popup"));
 allPopups.forEach((popup) => {
   bindOverlayClickListener(popup);
 });
+
+const profileFormValidate = new FormValidate(validationConfig, document.querySelector('.popup__form-edit'));
+profileFormValidate.enablevalidationConfig();
+
+const cardFormValidate = new FormValidate(validationConfig, document.querySelector('.popup__form-add'));
+cardFormValidate.enablevalidationConfig();
