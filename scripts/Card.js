@@ -1,4 +1,4 @@
-import { openPopUp } from "./index.js";
+import { openPopup } from "./index.js";
 
 export default class Card {
   constructor(link, name, templateSelector) {
@@ -21,12 +21,19 @@ export default class Card {
 
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
-    this._cardElement.querySelector(".card__title").textContent =
-      this._name;
+    this._cardElement.querySelector(".card__title").textContent = this._name;
 
     this._setEventListeners();
 
     return this._cardElement;
+  }
+
+  _handleButtonLikeClick() {
+    this._buttonLike.classList.toggle("card__btn_like-active");
+  }
+
+  _handleButtonDeleteClick() {
+    this._cardElement.remove();
   }
 
   _setEventListeners() {
@@ -48,15 +55,7 @@ export default class Card {
       this._itemImage.alt = this._cardImage.alt;
       this._popupImage.querySelector(".popup-zoom__text").textContent =
         this._cardImage.alt;
-      openPopUp(this._popupImage);
+      openPopup(this._popupImage);
     });
-  }
-
-  _handleButtonLikeClick() {
-    this._buttonLike.classList.toggle("card__btn_like-active");
-  }
-
-  _handleButtonDeleteClick() {
-    this._cardElement.remove();
   }
 }

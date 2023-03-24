@@ -61,42 +61,42 @@ const initialCards = [
   },
 ];
 
-const closePopupEsc = (evt) => {
-  if (evt.key === "Escape") {
-    evt.preventDefault();
-    const popupOpened = document.querySelector(".popup_opened");
-    closePopUp(popupOpened);
-  }
-};
-
-const bindOverlayClickListener = (evt) => {
-  if (evt.target.classList.contains("popup_opened")) {
-    closePopUp(evt.target);
-  }
-};
-
-const openPopUp = function (popup) {
+const openPopup = function (popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
 };
 
-const closePopUp = function (popup) {
+const closePopup = function (popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
 };
 
-const saveProfile = function () {
+const closePopupEsc = (event) => {
+  if (event.key === "Escape") {
+    event.preventDefault();
+    const popupOpened = document.querySelector(".popup_opened");
+    closePopup(popupOpened);
+  }
+};
+
+const bindOverlayClickListener = (event) => {
+  if (event.target.classList.contains("popup_opened")) {
+    closePopup(event.target);
+  }
+};
+
+const handleProfileFormSubmit = function () {
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   profileForm.reset();
-  closePopUp(popupEdit);
+  closePopup(popupEdit);
 };
 
-const saveElement = function () {
+const addNewCard = function () {
   cardsContainer.prepend(
     createCard(nameInputCard.value, linkInputCard.value, "#card")
   );
-  closePopUp(popupAdd);
+  closePopup(popupAdd);
 };
 
 const createCard = function (link, name, templateSelector) {
@@ -105,32 +105,32 @@ const createCard = function (link, name, templateSelector) {
   return card.generateCard();
 };
 
-popupEdit.addEventListener("mousedown", bindOverlayClickListener);
+popupEdit.addEventListener("click", bindOverlayClickListener);
 
-popupAdd.addEventListener("mousedown", bindOverlayClickListener);
+popupAdd.addEventListener("click", bindOverlayClickListener);
 
-popupZoom.addEventListener("mousedown", bindOverlayClickListener);
+popupZoom.addEventListener("click", bindOverlayClickListener);
 
-buttonEdit.addEventListener("click", (eventOpen) => {
-  openPopUp(popupEdit);
+buttonEdit.addEventListener("click", () => {
+  openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
 });
-buttonAdd.addEventListener("click", (eventOpen) => {
-  openPopUp(popupAdd);
-  popupFormAdd.reset();
+
+buttonAdd.addEventListener("click", () => {
+  openPopup(popupAdd);
 });
 
 profileCloseButton.addEventListener("click", () => {
-  closePopUp(popupEdit);
+  closePopup(popupEdit);
 });
 
 buttonCloseAdd.addEventListener("click", () => {
-  closePopUp(popupAdd);
+  closePopup(popupAdd);
 });
 
 buttonCloseZoom.addEventListener("click", () => {
-  closePopUp(popupZoom);
+  closePopup(popupZoom);
 });
 
 function toggleSubmitNewButton() {
@@ -142,19 +142,19 @@ function toggleSubmitNewButton() {
 
 profileForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  saveProfile();
+  handleProfileFormSubmit();
   profileForm.reset();
 });
 
 popupFormAdd.addEventListener("submit", (event) => {
   event.preventDefault();
-  saveElement();
+  addNewCard();
   popupFormAdd.reset();
   toggleSubmitNewButton()
 });
 
 initialCards.forEach(function (card) {
-  cardsContainer.append(createCard(card.link, card.name, "#card"));
+  cardsContainer.prepend(createCard(card.link, card.name, "#card"));
 });
 
 const profileFormValidate = new FormValidator(
@@ -171,4 +171,4 @@ const cardFormValidate = new FormValidator(
 
 cardFormValidate.enablevalidation();
 
-export { openPopUp };
+export { openPopup };
