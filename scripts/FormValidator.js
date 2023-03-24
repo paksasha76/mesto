@@ -67,7 +67,8 @@ export default class FormValidator {
     this._errorElement.textContent = "";
   }
 
-  enablevalidationConfig() {
+  enablevalidation() {
     this._setEventListeners();
   }
 }
+
