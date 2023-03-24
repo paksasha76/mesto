@@ -79,11 +79,18 @@ const closePopupEsc = (event) => {
   }
 };
 
-const bindOverlayClickListener = (event) => {
-  if (event.target.classList.contains("popup_opened")) {
-    closePopup(event.target);
-  }
-};
+function bindOverlayClickListener(popup) {
+  popup.addEventListener("click", (event) => {
+    if (event.target === popup) {
+      closePopup(popup);
+    }
+  });
+}
+
+const allPopups = Array.from(document.querySelectorAll(".popup"));
+allPopups.forEach((popup) => {
+  bindOverlayClickListener(popup);
+});
 
 const handleProfileFormSubmit = function () {
   profileName.textContent = nameInput.value;
@@ -105,11 +112,12 @@ const createCard = function (link, name, templateSelector) {
   return card.generateCard();
 };
 
-popupEdit.addEventListener("click", bindOverlayClickListener);
-
-popupAdd.addEventListener("click", bindOverlayClickListener);
-
-popupZoom.addEventListener("click", bindOverlayClickListener);
+function toggleSubmitNewButton() {
+  if (nameInputCard.value.length === 0 || linkInputCard.value.length === 0) {
+    buttonCreate.disabled = true;
+    buttonCreate.classList.add("popup__save-btn-disabled");
+  }
+}
 
 buttonEdit.addEventListener("click", () => {
   openPopup(popupEdit);
@@ -133,13 +141,6 @@ buttonCloseZoom.addEventListener("click", () => {
   closePopup(popupZoom);
 });
 
-function toggleSubmitNewButton() {
-  if (nameInputCard.value.length === 0 || linkInputCard.value.length === 0) {
-    buttonCreate.disabled = true;
-    buttonCreate.classList.add("popup__save-btn-disabled");
-  }
-}
-
 profileForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handleProfileFormSubmit();
@@ -150,7 +151,7 @@ popupFormAdd.addEventListener("submit", (event) => {
   event.preventDefault();
   addNewCard();
   popupFormAdd.reset();
-  toggleSubmitNewButton()
+  toggleSubmitNewButton();
 });
 
 initialCards.forEach(function (card) {
