@@ -101,7 +101,7 @@ const handleProfileFormSubmit = function () {
 
 const addNewCard = function () {
   cardsContainer.prepend(
-    createCard(nameInputCard.value, linkInputCard.value, "#card")
+    createCard(linkInputCard.value, nameInputCard.value, "#card")
   );
   closePopup(popupAdd);
 };
@@ -111,13 +111,6 @@ const createCard = function (link, name, templateSelector) {
 
   return card.generateCard();
 };
-
-function toggleSubmitNewButton() {
-  if (nameInputCard.value.length === 0 || linkInputCard.value.length === 0) {
-    buttonCreate.disabled = true;
-    buttonCreate.classList.add("popup__save-btn-disabled");
-  }
-}
 
 buttonEdit.addEventListener("click", () => {
   openPopup(popupEdit);
@@ -151,7 +144,7 @@ popupFormAdd.addEventListener("submit", (event) => {
   event.preventDefault();
   addNewCard();
   popupFormAdd.reset();
-  toggleSubmitNewButton();
+  cardFormValidate.enablevalidation();
 });
 
 initialCards.forEach(function (card) {

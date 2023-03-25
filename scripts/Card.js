@@ -34,6 +34,7 @@ export default class Card {
 
   _handleButtonDeleteClick() {
     this._cardElement.remove();
+    this._cardElement = null;
   }
 
   _setEventListeners() {
@@ -41,6 +42,8 @@ export default class Card {
     this._buttonLike = this._cardElement.querySelector(".card__btn-like");
     this._popupImage = document.querySelector(".popup-zoom");
     this._itemImage = this._popupImage.querySelector(".popup-zoom__image");
+    this._popupImage.querySelector(".popup-zoom__text").textContent =
+      this._cardImage.alt;
 
     this._buttonDelete.addEventListener("click", () => {
       this._handleButtonDeleteClick();
@@ -51,10 +54,8 @@ export default class Card {
     });
 
     this._cardImage.addEventListener("click", () => {
-      this._itemImage.src = this._cardImage.src;
-      this._itemImage.alt = this._cardImage.alt;
-      this._popupImage.querySelector(".popup-zoom__text").textContent =
-        this._cardImage.alt;
+      this._itemImage.src = this._link;
+      this._itemImage.alt = this._name;
       openPopup(this._popupImage);
     });
   }

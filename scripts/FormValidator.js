@@ -16,10 +16,15 @@ export default class FormValidator {
     this._buttonElement = this._formElement.querySelector(
       this._submitButtonSelector
     );
-
+    this._nameInputCard = this._formElement.querySelector(
+      ".popup__input_type_card-name"
+    );
+    this._linkInputCard = this._formElement.querySelector(
+      ".popup__input_type_card-link"
+    );
     this.__toggleSubmitButton();
 
-    this._inputList.map((inputElement) => {
+    this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
         this.__toggleSubmitButton();
@@ -33,7 +38,7 @@ export default class FormValidator {
       this._buttonElement.setAttribute("disabled", true);
     } else {
       this._buttonElement.classList.remove(this._inactiveButtonClass);
-      this._buttonElement.removeAttribute("disabled"); 
+      this._buttonElement.removeAttribute("disabled");
     }
   }
 
