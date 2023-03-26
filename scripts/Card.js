@@ -42,8 +42,7 @@ export default class Card {
     this._buttonLike = this._cardElement.querySelector(".card__btn-like");
     this._popupImage = document.querySelector(".popup-zoom");
     this._itemImage = this._popupImage.querySelector(".popup-zoom__image");
-    this._popupImage.querySelector(".popup-zoom__text").textContent =
-      this._cardImage.alt;
+    this._popupText = this._popupImage.querySelector(".popup-zoom__text");
 
     this._buttonDelete.addEventListener("click", () => {
       this._handleButtonDeleteClick();
@@ -56,6 +55,7 @@ export default class Card {
     this._cardImage.addEventListener("click", () => {
       this._itemImage.src = this._link;
       this._itemImage.alt = this._name;
+      this._popupText.textContent = this._name;
       openPopup(this._popupImage);
     });
   }

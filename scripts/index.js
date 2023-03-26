@@ -108,7 +108,8 @@ const addNewCard = function () {
 
 const createCard = function (link, name, templateSelector) {
   const card = new Card(link, name, templateSelector);
-
+  buttonCreate.classList.add("popup__save-btn-disabled");
+  buttonCreate.disabled = true;
   return card.generateCard();
 };
 
@@ -144,7 +145,6 @@ popupFormAdd.addEventListener("submit", (event) => {
   event.preventDefault();
   addNewCard();
   popupFormAdd.reset();
-  cardFormValidate.enablevalidation();
 });
 
 initialCards.forEach(function (card) {
