@@ -16,17 +16,17 @@ export default class FormValidator {
     this._buttonElement = this._formElement.querySelector(
       this._submitButtonSelector
     );
-    this.__toggleSubmitButton();
+    this.toggleSubmitButton();
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
-        this.__toggleSubmitButton();
+        this.toggleSubmitButton();
       });
     });
   }
 
-  __toggleSubmitButton() {
+  toggleSubmitButton() {
     if (this._hasInvalidInput()) {
       this._buttonElement.classList.add(this._inactiveButtonClass);
       this._buttonElement.setAttribute("disabled", true);
