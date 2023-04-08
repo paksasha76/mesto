@@ -1,10 +1,9 @@
-import { openPopup } from "../pages/index.js"
-
 export default class Card {
-  constructor(link, name, templateSelector) {
+  constructor(link, name, templateSelector, func) {
     this._link = link;
     this._name = name;
     this._templateSelector = templateSelector;
+    this._handleCardView = func;
   }
 
   _getTemplate() {
@@ -43,6 +42,9 @@ export default class Card {
     this._popupImage = document.querySelector(".popup-zoom");
     this._itemImage = this._popupImage.querySelector(".popup-zoom__image");
     this._popupText = this._popupImage.querySelector(".popup-zoom__text");
+    this._itemImage.src = this._link;
+    this._itemImage.alt = this._name;
+    this._popupText.textContent = this._name;
 
     this._buttonDelete.addEventListener("click", () => {
       this._handleButtonDeleteClick();
@@ -53,10 +55,7 @@ export default class Card {
     });
 
     this._cardImage.addEventListener("click", () => {
-      this._itemImage.src = this._link;
-      this._itemImage.alt = this._name;
-      this._popupText.textContent = this._name;
-      openPopup(this._popupImage);
+      this._handleCardView(this._name, this._link)
     });
   }
 }
