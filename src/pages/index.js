@@ -17,6 +17,7 @@ const popupFormAdd = document.querySelector(".popup__form-add");
 const nameInputCard = document.querySelector(".popup__input_type_card-name");
 const linkInputCard = document.querySelector(".popup__input_type_card-link");
 const popupEdit = document.querySelector(".popup-edit");
+const formsEditProfile = document.forms['profile-info'];
 
 const buttonCreate = document.querySelector(".popup__save-btn-create");
 
@@ -76,9 +77,14 @@ const createCard = function (link, name, templateSelector, func) {
 };
 
 const userInfo = new UserInfo({
-  nameSelector: ".profile__name",
-  jobSelector: ".profile__job",
+  nameSelector: '.profile__name', 
+  aboutSelector: '.profile__job',
 });
+
+function submitNewUserData(data) {
+  userInfo.setUserInfo(data);
+  popupProfile.close();
+}
 
 const cardsSection = new Section(
   {
@@ -90,23 +96,11 @@ const cardsSection = new Section(
 
 cardsSection.renderItems();
 
-function submitNewUserData(data) {
-  userInfo.setUserInfo(data);
-  popupProfile.close();
-}
-
-const handleProfileFormSubmit = function () {
-  profileName.textContent = nameInput.value;
-  profileJob.textContent = jobInput.value;
-  profileForm.reset();
-  closePopup(popupEdit);
-};
-
-buttonEdit.addEventListener("click", () => {
+buttonEdit.addEventListener('click', () => {
   popupProfile.open();
-  const { name, job } = userInfo.getUserInfo();
-  nameInputCard.value = name;
-  linkInputCard.value = job;
+  const {name, about} = userInfo.getUserInfo();
+  formsEditProfile.name.value = name;
+  formsEditProfile.about.value = about;
   profileFormValidate.disableSubmitButton();
 });
 
@@ -115,18 +109,6 @@ buttonAdd.addEventListener("click", () => {
   profileFormValidate.disableSubmitButton();
 });
 
-profileForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  handleProfileFormSubmit();
-  profileForm.reset();
-});
-
-popupFormAdd.addEventListener("submit", (event) => {
-  event.preventDefault();
-  addNewCard();
-  popupFormAdd.reset();
-  cardFormValidate.toggleSubmitButton();
-});
 
 function submitNewCardForm(cardItem) {
   const newCard = createCard(
@@ -138,7 +120,7 @@ function submitNewCardForm(cardItem) {
   cardsSection.addCard(newCard);
 }
 
-buttonCreate.addEventListener("click", () => {
+buttonAdd.addEventListener("click", () => {
   popupNewCard.open();
   cardFormValidate.disableSubmitButton();
 });
