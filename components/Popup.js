@@ -19,7 +19,7 @@ export default class Popup {
       this.close();
     }
   }
-  _handleCloseOnClick(event) {
+  _handleCloseOnClick = (event) => {
     if (event.target === this.popupSelector) {
       this.close();
     }
