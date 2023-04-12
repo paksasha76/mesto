@@ -139,8 +139,8 @@ const cardFormValidate = new FormValidator(
 
 cardFormValidate.enablevalidation();
 
-function handleCardClick(name, link) {
-  imagePopup.open(name, link);
+function handleCardClick(link, name) {
+  imagePopup.open(link, name);
 }
 
 imagePopup.setEventListener();
