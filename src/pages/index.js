@@ -49,9 +49,9 @@ const initialCards = [
   },
 ];
 
-const imagePopup = new PopupWithImage(".popup-zoom");
-const popupProfile = new PopupWithForm(".popup-edit", submitNewUserData);
-const popupNewCard = new PopupWithForm(".popup-add", submitNewCardForm);
+const popupEdit = new PopupWithForm(".popup-edit", submitNewUserData);
+const popupZoom = new PopupWithImage(".popup-zoom");
+const popupAdd = new PopupWithForm(".popup-add", submitNewCardForm);
 
 const addNewCard = function (cardItem) {
   const card = createCard(
@@ -63,8 +63,8 @@ const addNewCard = function (cardItem) {
   cardsSection.addItem(card);
 };
 
-const createCard = function (link, name, templateSelector, func) {
-  const card = new Card(link, name, templateSelector, func);
+const createCard = function (link, name, templateSelector, handleCardView) {
+  const card = new Card(link, name, templateSelector, handleCardView);
   return card.generateCard();
 };
 
@@ -75,7 +75,7 @@ const userInfo = new UserInfo({
 
 function submitNewUserData(data) {
   userInfo.setUserInfo(data);
-  popupProfile.close();
+  popupEdit.close();
 }
 
 const cardsSection = new Section(
@@ -89,7 +89,7 @@ const cardsSection = new Section(
 cardsSection.renderItems();
 
 buttonEdit.addEventListener('click', () => {
-  popupProfile.open();
+  popupEdit.open();
   const {name, about} = userInfo.getUserInfo();
   formsEditProfile.name.value = name;
   formsEditProfile.about.value = about;
@@ -97,7 +97,7 @@ buttonEdit.addEventListener('click', () => {
 });
 
 buttonAdd.addEventListener("click", () => {
-  popupNewCard.open();
+  popupAdd.open();
   profileFormValidate.disableSubmitButton();
 });
 
@@ -113,7 +113,7 @@ function submitNewCardForm(cardItem) {
 }
 
 buttonAdd.addEventListener("click", () => {
-  popupNewCard.open();
+  popupAdd.open();
   cardFormValidate.disableSubmitButton();
 });
 
@@ -132,9 +132,9 @@ const cardFormValidate = new FormValidator(
 cardFormValidate.enablevalidation();
 
 function handleCardClick(link, name) {
-  imagePopup.open(link, name);
+  popupZoom.open(link, name);
 }
 
-imagePopup.setEventListener();
-popupProfile.setEventListener();
-popupNewCard.setEventListener();
+popupZoom.setEventListener();
+popupEdit.setEventListener();
+popupAdd.setEventListener();

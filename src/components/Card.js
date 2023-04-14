@@ -1,9 +1,9 @@
 export default class Card {
-  constructor(link, name, templateSelector, func) {
+  constructor(link, name, templateSelector, handleCardView) {
     this._link = link;
     this._name = name;
     this._templateSelector = templateSelector;
-    this._handleCardView = func;
+    this._handleCardView = handleCardView;
   }
 
   _getTemplate() {
