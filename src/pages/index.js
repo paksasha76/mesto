@@ -1,3 +1,4 @@
+import '../pages/index.css';
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import UserInfo from "../components/UserInfo.js";
@@ -6,20 +7,11 @@ import PopupWithImage from "../components/PicturePopup.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 
 const buttonEdit = document.querySelector(".profile__edit-btn");
-const profileForm = document.querySelector(".popup__form");
-const nameInput = document.querySelector(".popup__input_type_name");
-const jobInput = document.querySelector(".popup__input_type_job");
-const profileName = document.querySelector(".profile__name");
-const profileJob = document.querySelector(".profile__job");
 
 const buttonAdd = document.querySelector(".profile__add-btn");
-const popupFormAdd = document.querySelector(".popup__form-add");
-const nameInputCard = document.querySelector(".popup__input_type_card-name");
-const linkInputCard = document.querySelector(".popup__input_type_card-link");
-const popupEdit = document.querySelector(".popup-edit");
+
 const formsEditProfile = document.forms['profile-info'];
 
-const buttonCreate = document.querySelector(".popup__save-btn-create");
 
 const validationConfig = {
   formSelector: ".popup__form",
