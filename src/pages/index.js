@@ -1,4 +1,4 @@
-import '../pages/index.css';
+import "../pages/index.css";
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import UserInfo from "../components/UserInfo.js";
@@ -10,8 +10,7 @@ const buttonEdit = document.querySelector(".profile__edit-btn");
 
 const buttonAdd = document.querySelector(".profile__add-btn");
 
-const formsEditProfile = document.forms['profile-info'];
-
+const formsEditProfile = document.forms["profile-info"];
 
 const validationConfig = {
   formSelector: ".popup__form",
@@ -60,7 +59,7 @@ const addNewCard = function (cardItem) {
     "#card",
     handleCardClick
   );
-  cardsSection.addItem(card);
+  cardsSection.addCard(card);
 };
 
 const createCard = function (link, name, templateSelector, handleCardView) {
@@ -69,8 +68,8 @@ const createCard = function (link, name, templateSelector, handleCardView) {
 };
 
 const userInfo = new UserInfo({
-  nameSelector: '.profile__name', 
-  aboutSelector: '.profile__job',
+  nameSelector: ".profile__name",
+  aboutSelector: ".profile__job",
 });
 
 function submitNewUserData(data) {
@@ -88,9 +87,9 @@ const cardsSection = new Section(
 
 cardsSection.renderItems();
 
-buttonEdit.addEventListener('click', () => {
+buttonEdit.addEventListener("click", () => {
   popupEdit.open();
-  const {name, about} = userInfo.getUserInfo();
+  const { name, about } = userInfo.getUserInfo();
   formsEditProfile.name.value = name;
   formsEditProfile.about.value = about;
   profileFormValidate.disableSubmitButton();
@@ -101,7 +100,6 @@ buttonAdd.addEventListener("click", () => {
   profileFormValidate.disableSubmitButton();
 });
 
-
 function submitNewCardForm(cardItem) {
   const newCard = createCard(
     cardItem.link,
@@ -111,11 +109,6 @@ function submitNewCardForm(cardItem) {
   );
   cardsSection.addCard(newCard);
 }
-
-buttonAdd.addEventListener("click", () => {
-  popupAdd.open();
-  cardFormValidate.disableSubmitButton();
-});
 
 const profileFormValidate = new FormValidator(
   validationConfig,
