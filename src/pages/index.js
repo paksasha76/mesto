@@ -95,11 +95,6 @@ buttonEdit.addEventListener("click", () => {
   profileFormValidate.disableSubmitButton();
 });
 
-buttonAdd.addEventListener("click", () => {
-  popupAdd.open();
-  profileFormValidate.disableSubmitButton();
-});
-
 function submitNewCardForm(cardItem) {
   const newCard = createCard(
     cardItem.link,
@@ -109,6 +104,11 @@ function submitNewCardForm(cardItem) {
   );
   cardsSection.addCard(newCard);
 }
+
+buttonAdd.addEventListener("click", () => {
+  popupAdd.open();
+  cardFormValidate.disableSubmitButton();
+});
 
 const profileFormValidate = new FormValidator(
   validationConfig,
