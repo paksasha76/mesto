@@ -5,6 +5,7 @@ import UserInfo from "../components/UserInfo.js";
 import Section from "../components/Section.js";
 import PopupWithImage from "../components/PicturePopup.js";
 import PopupWithForm from "../components/PopupWithForm.js";
+import { Api } from '../components/Api.js';
 
 const buttonEdit = document.querySelector(".profile__edit-btn");
 
@@ -21,36 +22,41 @@ const validationConfig = {
   errorClass: "form__error-message_active",
 };
 
-const initialCards = [
+
+const api = new Api({
+  url: 'https://mesto.nomoreparties.co/v1/cohort-68',
+  headers: {
+      authorization: '39748c5f-0d2d-4234-9c59-98ecf4137a9d',
+      'Content-Type': 'application/json'
+  }
+});
+
+const cardsSection = new Section(
   {
-    name: "Токио",
-    link: "https://preview.redd.it/5nxgafq6c9d71.jpg?auto=webp&s=4a5ad8cf9c7bf372897f570eb0fdca2b2ba52ea6",
+    renderer: addNewCard,
   },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
+  ".cards"
+);
+
+
+Promise.all([api.getInitialCards()])
+.then(([cards]) => {
+    const cardsSection = new Section ({
+      items: cards,
+      renderer: (items) => {
+        addNewCard(items);
+      }
+     }, ".cards");
+     cardsSection.renderItems()
+})
+.catch((err) => {
+    console.log(err);
+})
 
 const popupEdit = new PopupWithForm(".popup-edit", submitNewUserData);
 const popupZoom = new PopupWithImage(".popup-zoom");
 const popupAdd = new PopupWithForm(".popup-add", submitNewCardForm);
+
 
 const addNewCard = function (cardItem) {
   const card = createCard(
@@ -76,16 +82,6 @@ function submitNewUserData(data) {
   userInfo.setUserInfo(data);
   popupEdit.close();
 }
-
-const cardsSection = new Section(
-  {
-    items: initialCards,
-    renderer: addNewCard,
-  },
-  ".cards"
-);
-
-cardsSection.renderItems();
 
 buttonEdit.addEventListener("click", () => {
   popupEdit.open();
