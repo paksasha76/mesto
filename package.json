@@ -11,6 +11,10 @@
   },
   "author": "",
   "license": "ISC",
+    "bugs": {
+    "url": "https://github.com/paksasha76/mesto/issues"
+  },
+  "homepage": "https://github.com/paksasha76/mesto#readme",
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
