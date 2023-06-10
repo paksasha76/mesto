@@ -1,16 +1,20 @@
-import Popup from "./Popup.js";
+import { Popup } from "./Popup.js";
 
-export default class PopupWithImage extends Popup {
+export default class PicturePopup extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
-    this._popupZoomImage =
-      this.popupSelector.querySelector(".popup-zoom__image");
-    this._popupZoomText = this.popupSelector.querySelector(".popup-zoom__text");
   }
-  open(title, link) {
-    this._popupZoomImage.src = link;
-    this._popupZoomImage.alt = title;
-    this._popupZoomText.textContent = title;
+
+  open(cardItem) {
     super.open();
+    const popupZoomImage = this._popup.querySelector(".popup__zoom-image");
+    const popupZoomText = this._popup.querySelector(".popup__zoom-title");
+
+    const popupImage = cardItem.querySelector(".place__photo");
+    const popupText = cardItem.querySelector(".place__title");
+
+    popupZoomImage.src = popupImage.src;
+    popupZoomImage.alt = popupImage.alt;
+    popupZoomText.textContent = popupText.textContent;
   }
 }
