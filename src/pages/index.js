@@ -111,7 +111,7 @@ function submitFormPopupAddPlace(formValues) {
     .then((res) => {
       const cardElement = createCard(res);
       cardSection.addItem(cardElement);
-      popupAddPlace.close();
+      popupAddPlace.closePopup();
     })
     .catch((err) => {
       console.log(err);
