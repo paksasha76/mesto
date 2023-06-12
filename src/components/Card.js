@@ -80,7 +80,8 @@ export default class Card {
   };
 
   removeCard() {
-    this._element.closest(".place").remove();
+    this._element.remove();
+    this._element = null;
   }
 
   _setEventListeners() {
@@ -91,7 +92,7 @@ export default class Card {
       this._handleDeleteClick(this);
     });
     this._placePhoto.addEventListener("click", () => {
-      this._handleCardClick(this._element);
+      this._handleCardClick(this._name, this._link);
     });
   }
 }

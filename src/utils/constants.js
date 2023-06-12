@@ -17,9 +17,7 @@ export const buttonOpenPopupProfileEdit = document.querySelector(
   ".profile__edit-button"
 );
 export const popupName = document.querySelector(".popup__input_type_name");
-export const popupJob = document.querySelector(
-  ".popup__input_type_profession"
-);
+export const popupJob = document.querySelector(".popup__input_type_profession");
 
 export const formPopupAddPlace = document.querySelector(
   ".popup__form_type_add"

@@ -153,8 +153,8 @@ function submitPopupConfirm(card) {
     });
 }
 
-function handleCardClick(card) {
-  popupImage.open(card);
+function handleCardClick(title, link) {
+  popupImage.open(title, link);
 }
 
 function handleDeleteClick(card) {
